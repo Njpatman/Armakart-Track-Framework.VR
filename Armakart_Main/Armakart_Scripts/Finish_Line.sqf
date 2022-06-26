@@ -42,24 +42,9 @@ if (Current_Laps + 1 > Laps_number && Current_Checkpoint isEqualTo Checkpoints_n
 
 		[format ["|Armakart Doubles| : You & your buddy finished %1, make sure to notify him as he might not get this message", _FINISHED_KART_NUM_STR]] remoteexec ["systemChat", vehicle player];
 
-		uiSleep 1;
-
 		deleteVehicle vehicle player;
 
-		//Players were having trouble dying, this just kills them twice, just in case
-		player setDamage 1;
-		_Driver setDamage 1;
-		uiSleep 1;
-		player setDamage 1;
-		_Driver setDamage 1;
-
-		uiSleep 4;
-
-		{
-
-		deleteVehicle _x;
-
-		} forEach allDeadMen;
+		[true] call ace_spectator_fnc_setSpectator;
 
 	};
 
@@ -78,22 +63,9 @@ if (Current_Laps + 1 > Laps_number && Current_Checkpoint isEqualTo Checkpoints_n
 
 		systemChat format ["|Armakart Singles| : You finished %1", _FINISHED_KART_NUM_STR];
 
-		uiSleep 1;
-
 		deleteVehicle vehicle player;
 
-		//Players were having trouble dying, this just kills them twice, just in case
-		player setDamage 1;
-		uiSleep 1;
-		player setDamage 1;
-
-		uiSleep 4;
-
-		{
-
-		deleteVehicle _x;
-
-		} forEach allDeadMen;
+		[true] call ace_spectator_fnc_setSpectator;
 
 	};
 
