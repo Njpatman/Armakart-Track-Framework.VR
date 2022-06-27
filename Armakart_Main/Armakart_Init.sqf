@@ -109,15 +109,7 @@ if (hasInterface && local player) then
 
 		if (BEGUN_RACE) exitWith {
 
-			player setDamage 1;
-
-			uiSleep 2;
-
-			{
-
-			deleteVehicle _x;
-
-			} forEach allDeadMen;
+			[true] call ace_spectator_fnc_setSpectator;
 
 			uiSleep 2;
 
