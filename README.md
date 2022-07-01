@@ -7,6 +7,8 @@ This is the Framework for players to create their own Armakart tracks. Requries:
 
 Please reference Armakart Track Framework Setup Guidelines.txt once you've downloaded the mission folder and have opened up the mission in eden editor.
 
+Make sure to remove "-main" from the downloaded folder "Armakart-Track-Framework.VR-main" or else the editor will not open up the mission file.
+
 
 Credits
 
