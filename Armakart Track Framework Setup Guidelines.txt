@@ -48,7 +48,7 @@ By: Njpatman
 
  - Camera Look Positions
 
-   -- Where the intro sequences orbital cameras will focus on 
+   -- Where the intro sequences orbital cameras will focus on, do not delete them, simply bunch them up if you have to
    
     * Recommend you place them around points of interests around your track.
 
@@ -58,7 +58,9 @@ By: Njpatman
    -- Checkpoints are simple position/variable reset locations that should be littered throughout your track.
 
 
-    * The orange VR selector in each checkpoints trigger is where players will teleport around, note that the orange VR selector doesn't need to be in the trigger
+    * The orange VR selector in each checkpoints trigger is where players will teleport around.
+
+    * The orange VR selector DOES need to be in the trigger for the powerup "Checkpoint Teleport" to work properly, the trigger must at minimum overlay the orange VR selector by 6.5m on all sides.
 
     * ORIENTATION MATTERS - The orange VR selector in each checkpoints trigger has to be rotated so it lines up with direction you want players to face after they reset.
 
