@@ -11,7 +11,7 @@
 
 			Laps_number = ["Laps_number", 3] call BIS_fnc_getParamValue; // Can be as high as you want, just don't go under 2
 
-			Checkpoints_number = 6; // The number of checkpoints on the track, so we can display the total number of checkpoints on the players ui and make the track work !!! NEVER GO UNDER 2 !!!.
+			Checkpoints_number = 8; // The number of checkpoints on the track, so we can display the total number of checkpoints on the players ui and make the track work !!! NEVER GO UNDER 2 !!!.
 
 			Sub_Checkpoints_Number = 1; // Number of sub checkpoints on your track, make sure to include Sub_CP_0.
 
