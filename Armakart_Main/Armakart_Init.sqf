@@ -81,7 +81,7 @@ if (hasInterface && local player) then
 	//Sets group name for spectator boys
 	[group player, [(name player)]] remoteExec ["setGroupIdGlobal", 2];
 	
-	["players", "allsides"] execVM 'Armakart_Main/Armakart_Scripts/Player_Markers.sqf';
+	["players", "allsides"] execVM 'Armakart_Main\Armakart_Scripts\Player_Markers.sqf';
 
 	"Black_Screen_Layer" cutText ["", "BLACK FADED", 150];
 
