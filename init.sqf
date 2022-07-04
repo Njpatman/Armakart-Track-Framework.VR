@@ -1,24 +1,24 @@
 //-------------Track Controls-------------\\
 
-	//Everything that uses BIS_fnc_getParamValue can be found in Armakart_Main\Params.hpp
+// NOTE: Everything such as Laps_number, Customization_Phase_Time, Voting_Phase_Enabled, and Voting_Phase_Time can be found in Armakart_Main/Params.hpp, Feel free to edit the default values to what best suits your track.
 
-		//Track Title\\
+	//Track Title\\
 
-			Track_Title = 'Framework'; // Should be name of your track, shown at intro
+		Track_Title = 'Framework'; // Should be name of your track, shown at intro
 
-		//Intro Cam Controls\\
+	//Intro Cam Controls\\
 
-			Radius_cam = 125; // Circle radius (distance to the checkpoints)
+		Radius_cam = 125; // Circle radius (distance to the checkpoints)
 
-			Angle_cam = random 360; // Starting angle (compass direction)
+		Angle_cam = random 360; // Starting angle (compass direction)
 
-			Altitude_cam = 55; // Camera altitude (height above ground)
+		Altitude_cam = 55; // Camera altitude (height above ground)
 
-			Speed_cam = 0.06; // Higher is faster
+		Speed_cam = 0.06; // Higher is faster
 
-		//Kart Classname\\
+	//Kart Classname\\
 
-			Kart_Classname = "C_Quadbike_01_F";
+		Kart_Classname = "C_Quadbike_01_F";
 /*
 \\---------------------------------------//
 */
