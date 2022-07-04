@@ -1,7 +1,7 @@
 #include "BriefingCore.sqf" //DO NOT REMOVE
 
 NEWTAB("Description")
-	<br/><font color='#e01010' size='24' face='PuristaBold'>Armakart V2.4</font>
+	<br/><font color='#e01010' size='24' face='PuristaBold'>Armakart V2.5</font>
 	<br/>
 	<br/>Welcome to Armakart, a Arma 3 race system heavily designed around the concepts and ideas of Mariokart.
 	<br/>
