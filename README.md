@@ -1,5 +1,5 @@
 
-Armakart V2.4
+Armakart V2.5
 
 Welcome to Armakart, a Arma 3 race system heavily designed around the concepts and ideas of Mariokart.
 
