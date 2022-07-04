@@ -1,0 +1,84 @@
+//=======================================================================================
+//
+//	wha_nametags_config.sqf - Contains configurable values for WHA nametags.
+//							Heavy inspiration from F3.
+//
+//	Note:	If CBA is enabled, many of these settings (DRAWCURSORONLY, for instance) can
+//		 	be altered by individual clients to their preference. 
+//
+//	@ /u/Whalen207 | Whale #5963
+//
+//=======================================================================================
+
+//---------------------------------------------------------------------------------------
+//	Configuration Values. Feel free to modify.
+//---------------------------------------------------------------------------------------
+
+//	Main Values																	(Default values)
+WHA_NAMETAGS_DRAWCURSORONLY = false;	//	Only draw nametags on mouse cursor. 		(Default: false)
+								//	Can save FPS in crowded areas.
+								//	Clients can change with CBA settings menu.
+								
+//WHA_NAMETAGS_ACTIONKEY = "timeInc"; 	//	Key that can be pressed to toggle tags.		("timeInc")
+								//	Default is "timeInc", which is normally
+								//	the (=) key. Other keys available here:
+								//	https://community.bistudio.com/wiki/inputAction/actions/bindings
+								//	Don't want any key? Comment out the line.
+								
+WHA_NAMETAGS_NIGHT = false;				//	Whether night will affect tag visibility.	(true)
+
+//	Information Shown
+WHA_NAMETAGS_SHOW_GROUP 		= false;	//	Show group name under unit's name. 			(true)
+WHA_NAMETAGS_SHOW_ROLE			= false; //	Show unit's role (rifleman, driver). 		(true)
+WHA_NAMETAGS_SHOW_VEHICLEINFO 	= false;	//	Show vehicle info. Requires SHOW_ROLE.		(true)
+
+//	Draw Distances
+
+WHA_NAMETAGS_DRAWDISTANCE_CURSOR = 150; //	Distance to draw nametags when pointing at a unit.	(20)
+								//	Should be greater than DISTANCE_ALL.
+								//	Can be altered significantly depending on player FOV.
+WHA_NAMETAGS_DRAWDISTANCE_NEAR = 100; 	//	Distance within which all nametags will be drawn.	(10)
+								//	Increasing this will cost performance.
+								//	Due to a bug this will seem ~3m shorter in third person.
+								//	If you want to truly disable non-cursor tags, set this to 0.
+//	Font Fade
+WHA_NAMETAGS_FADETIME = 1.5;				//	Fade time for cursor tags after player mouses away.	(1)
+
+//	Text Configuration: Typeface
+//	To manually alter these options, see functions\nametagResetFont.sqf.		
+//	Options:
+//	- "Roboto" (DEFAULT)
+//	- "RobotoLight"
+//	- "Purista"
+//	- "PuristaLight"
+//	- "Etelka"
+//	- "Tahoma"
+WHA_NAMETAGS_FONT_FACE = "Roboto";			//	Typeface set for nametag system.			("Roboto")
+
+//	Text Configuration: Size
+
+WHA_NAMETAGS_FONT_SIZE_RAW = 0.044;		//	Default raw font size.						(0.036)
+									//	Used directly for names, and used with
+									//	below modifiers for all else.
+WHA_NAMETAGS_FONT_SIZE_SEC_MULTI =	0.861;	//	Multiplier for group and role tags.			(0.861)
+WHA_NAMETAGS_FONT_SIZE_MULTI = 1;			//	A general multiplier that can be used		(1)
+									//	if you don't like the other ones.
+									//	Multipliers may be overriden by CBA settings.
+//	Text Configuration: Spacing
+WHA_NAMETAGS_FONT_SPREAD_MULTI = 1;		//	Multiplier for vertical font spacing.		(1)
+									//	may be overriden by CBA settings.
+								
+//	Text Configuration: Color
+//	To manually alter these options, see functions\nametagResetFont.sqf.
+//	Options:
+//	- WHGreen
+//	- ACERust
+//	- TMTMTeal
+//	- COALCrimson
+//	- FAWhite
+//	- STSand
+//	- BromaPurple
+WHA_NAMETAGS_FONT_COLOR = "COALCrimson";		//	Font color set for nametag system.			("WHGreen")
+
+//	Text Configuration: Position
+WHA_NAMETAGS_FONT_HEIGHT_ONHEAD = true;	//	Attaches nametags to head (like ACE)		(false)
