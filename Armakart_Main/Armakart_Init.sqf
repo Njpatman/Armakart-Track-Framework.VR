@@ -33,6 +33,20 @@ Scoreboard_Active = false;
 ALL_PLAYERS_COMPLETED = false;
 NO_LOOPING = false;
 
+//Number of Laps/Checkpoints
+Laps_number = ["Laps_number", 3] call BIS_fnc_getParamValue; // Can be as high as you want, just don't go under 2
+
+//Customization Phase Time
+Customization_Phase_Time = ["Customization_Phase_Time", 55] call BIS_fnc_getParamValue;
+
+//Voting Phase
+Voting_Phase_Enabled = ["Voting_Phase_Enabled", 1] call BIS_fnc_getParamValue;
+
+Voting_Phase_Time = ["Voting_Phase_Time", 25] call BIS_fnc_getParamValue;
+
+//Powerup Creep
+Powerup_Creep_Enabled = ["Powerup_Creep_Enabled", 1] call BIS_fnc_getParamValue;
+
 //- Client Init -\\
 
 if (hasInterface && local player) then 
