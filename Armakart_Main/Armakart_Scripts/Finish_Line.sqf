@@ -20,57 +20,51 @@ if (Current_Laps + 1 > Laps_number && Current_Checkpoint isEqualTo CP_NUM) exitW
 
 	Player_Finished = true;
 
+	_FINISHED_KART_NUM = KARTS_FINISHED + 1;
+
+	_FINISHED_KART_NUM_STR = [_FINISHED_KART_NUM] call BIS_fnc_ordinalNumber;
+
+
 	["Armakart", "MyKeyButShift-er", "Powerup Action", {""}, {""}, [DIK_F, [true, false, false]], false, 0, true] call CBA_fnc_addKeybind;
 	["Armakart", "MyKey", "Powerup Action", {""}, {""}, [DIK_F, [false, false, false]], false, 0, true] call CBA_fnc_addKeybind;
 
 	hintSilent "Race completed! Enjoy watching everyone else in spectator!";
 
-	_Group = createGroup sideLogic;
+	playSound "Win";
 
-	[player] joinSilent _Group;
-
-	if (player in (fullCrew [vehicle player, "cargo", false] select 0) && count units group player isEqualTo 2) exitwith {
+	if (player in (fullCrew [vehicle player, "cargo", false] select 0) && count units group player isEqualTo 2) then {
 
 		_Driver = driver vehicle player;
 
-		["Win"] remoteexec ["playsound", vehicle player];
+		[[_Name, _Name_Dos], "Armakart_Main\Armakart_Scripts\Places_Pushback.sqf"] remoteExec ["execVM", 0];
 
 		_Name = profileName;
 		_Name_Dos = name _Driver;
-
-		_FINISHED_KART_NUM = KARTS_FINISHED + 1;
-
-		_FINISHED_KART_NUM_STR = [_FINISHED_KART_NUM] call BIS_fnc_ordinalNumber;
-
-		[[_Name, _Name_Dos], "Armakart_Main\Armakart_Scripts\Places_Pushback.sqf"] remoteExec ["execVM", 0];
 
 		[format ["|Armakart Doubles| : You & your buddy finished %1, make sure to notify him as he might not get this message", _FINISHED_KART_NUM_STR]] remoteexec ["systemChat", vehicle player];
 
 		deleteVehicle vehicle player;
 
-		[true] call ace_spectator_fnc_setSpectator;
-
 	};
 
-	if (player in (fullCrew [vehicle player, "driver", false] select 0) && count units group player isEqualTo 1) exitwith {
+	if (player in (fullCrew [vehicle player, "driver", false] select 0) && count units group player isEqualTo 1) then {
 
 		_Name = profileName;
 
 		[[_Name], "Armakart_Main\Armakart_Scripts\Places_Pushback.sqf"] remoteExec ["execVM", 0];
 
-		playSound "Win";
-
-		_FINISHED_KART_NUM = KARTS_FINISHED + 1;
-
-		_FINISHED_KART_NUM_STR = [_FINISHED_KART_NUM] call BIS_fnc_ordinalNumber;
-
 		systemChat format ["|Armakart Singles| : You finished %1", _FINISHED_KART_NUM_STR];
 
 		deleteVehicle vehicle player;
 
-		[true] call ace_spectator_fnc_setSpectator;
-
 	};
+
+	_Group = createGroup sideLogic;
+
+	[player] joinSilent _Group;
+
+	[true] call ace_spectator_fnc_setSpectator;
+
 };
 
 
