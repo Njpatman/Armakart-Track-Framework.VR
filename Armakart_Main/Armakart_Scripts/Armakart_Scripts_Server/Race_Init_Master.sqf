@@ -126,6 +126,9 @@ if (Voting_Phase_Enabled isEqualTo 1) then {
 } else {
 	
     ["Customization_Timer_Layer", 0.001] remoteExec ["cutFadeOut", 0];
+    
+    //Remove timer display
+    [( "Timer" call BIS_fnc_rscLayer ), ["", "PLAIN"]] remoteExec ["cutText", 0];
 
     diag_log "//----------------------------------------------------------------------------\\";
     diag_log "|Armakart System| : Completed Customization Phase & skipped Voting phase.";
