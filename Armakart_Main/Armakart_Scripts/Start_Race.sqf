@@ -183,7 +183,7 @@ _Reset_Checkpoint = ["Reset_Checkpoint","<t color='#731717'>RESET</t>","\a3\ui_f
 
 		if (uiNamespace getVariable "NJP_Block_Keys" isEqualTo 1) then {
 
-			uiNamespace setVariable ["NJP_Block_Keys", 0, true];
+			uiNamespace setVariable ["NJP_Block_Keys", 0];
 
 			systemChat "|Armakart System| : Movement input will be re-enabled in a couple seconds from reset!";
 
