@@ -56,7 +56,7 @@ hintSilent "";
 if (Powerup_Creep_Enabled isEqualTo 2) exitwith 
 {
 
-	_Powerup = [1,18] call BIS_fnc_randomInt;
+	_Powerup = [1,19] call BIS_fnc_randomInt;
 
 	switch (_Powerup) do
 	{
@@ -78,6 +78,7 @@ if (Powerup_Creep_Enabled isEqualTo 2) exitwith
 		case 16 : { [] call NJP_Powerup_Fnc_CP_Tele; };
 		case 17 : { [] call NJP_Powerup_Fnc_Change_Mass; };
 		case 18 : { [] call NJP_Powerup_Fnc_Blue_Shell; };
+		case 19 : { [] call NJP_Powerup_Fnc_Miller_Lite; };
 	};
 };
 
@@ -86,7 +87,7 @@ if (Powerup_Creep_Enabled isEqualTo 2) exitwith
 if (Current_Place isEqualTo "N/A") exitwith 
 {
 
-	_Powerup = [1,16] call BIS_fnc_randomInt;
+	_Powerup = [1,18] call BIS_fnc_randomInt;
 
 	switch (_Powerup) do
 	{
@@ -106,6 +107,8 @@ if (Current_Place isEqualTo "N/A") exitwith
 		case 14 : { [] call NJP_Powerup_Fnc_Washing_Machine; };
 		case 15 : { [] call NJP_Powerup_Fnc_Fus_Ro_Dah; };
 		case 16 : { [] call NJP_Powerup_Fnc_Change_Mass; };
+		case 17 : { [] call NJP_Powerup_Fnc_Miller_Lite; };
+		case 18 : { [] call NJP_Powerup_Fnc_Blue_Shell; };
 
 	};
 };
