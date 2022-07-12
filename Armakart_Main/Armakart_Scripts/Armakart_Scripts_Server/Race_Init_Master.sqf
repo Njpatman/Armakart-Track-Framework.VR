@@ -159,11 +159,11 @@ _Start_Race_Server_Side = execVM "Armakart_Main\Armakart_Scripts\Start_Race.sqf"
 ["Armakart_Main\Armakart_Scripts\Live_Place.sqf"] remoteExec ["execVM", 0, false];
 
 RACE_PHASE = "Race_Started";
+publicVariable "RACE_PHASE";
 
 waitUntil {scriptDone _Start_Race_Server_Side};
 
 RACE_PHASE = "Race_Started";
-publicVariable "RACE_PHASE";
 
 diag_log "//----------------------------------------------------------------------------\\";
 diag_log "||Armakart System| : Started Race.";
