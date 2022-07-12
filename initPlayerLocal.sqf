@@ -34,7 +34,7 @@ uiNamespace setVariable ["NJP_Block_Keys", 0];
 uiNamespace setVariable ["NJP_Block_Keys_EH", nil];
 
 //Sets player vic fuel to 0
-[vehicle player, 0] remoteexec ['setfuel',vehicle player, true];
+vehicle player setFuel 0;
 			
 //Makes player/player vic invincible
 player allowDamage false;
@@ -42,14 +42,14 @@ vehicle player allowDamage false;
 
 // NAMETAGS
 [] execVM "Armakart_Main\Armakart_Scripts\Armakart_Scripts_Whale's_Nametags\wha_nametags_init.sqf";
-
 WHA_NAMETAGS_TESTLOOP = [{{WHA_NAMETAGS_PLAYER reveal [_x,4]} forEach allUnits;}, 10, []] call CBA_fnc_addPerFrameHandler;
 
 //Sets group name for spectator boys
-[group player, [(name player)]] remoteExec ["setGroupIdGlobal", 2, true];
+group player setGroupIdGlobal [name player];
 	
 //Player markers for GPS
 execVM 'Armakart_Main\Armakart_Scripts\Player_Markers.sqf';
+openGPS true; // Opens GPS by default - Added 12JULY2022
 
 //Compiles client functions
 _Client_Fnc_init = execVM "Armakart_Main\Armakart_Scripts\Client_Fnc_Library.sqf";
@@ -59,6 +59,6 @@ waitUntil {scriptDone _Client_Fnc_init};
 //Sets players initial character
 ["Farmer"] call NJP_Client_Fnc_Character_Swap;
 
-[] spawn NJP_JIP_CHECK;
+call NJP_JIP_CHECK;
 
 systemChat "|Armakart System| : Client initialization completed!";
