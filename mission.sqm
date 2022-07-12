@@ -8,7 +8,7 @@ class EditorData
 	toggles=518;
 	class ItemIDProvider
 	{
-		nextID=14526;
+		nextID=14537;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=840;
+		nextID=852;
 	};
 	class Camera
 	{
-		pos[]={205.46878,83.978683,88.892502};
-		dir[]={-0.75610423,-0.58115977,0.30109608};
-		up[]={-0.53997695,0.81374347,0.21503215};
-		aside[]={0.36998275,-3.7137943e-007,0.92908674};
+		pos[]={251.61807,52.301048,59.727856};
+		dir[]={0.010445067,-0.65211564,0.75804758};
+		up[]={0.0089845881,0.75811946,0.65205377};
+		aside[]={0.99990511,0,-0.013777599};
 	};
 };
 binarizationWanted=0;
@@ -37,13 +37,15 @@ addons[]=
 	"A3_Structures_F_Bootcamp_VR_Helpers",
 	"A3_Structures_F_Exp_Infrastructure_Pavements",
 	"A3_Misc_F_Helpers",
-	"A3_Modules_F"
+	"A3_Modules_F",
+	"SE_SEVA_Oxygen_Tank",
+	"ace_spectator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=9;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -93,6 +95,19 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item7
+		{
+			className="SE_SEVA_Oxygen_Tank";
+			name="SE_SEVA_Oxygen_Tank";
+			author="S.T.A.L.K.E.R. Equipment";
+		};
+		class Item8
+		{
+			className="ace_spectator";
+			name="ACE3 - Spectator";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
 	};
 };
 class DynamicSimulation
@@ -119,7 +134,7 @@ class ScenarioData
 	respawnDialog=0;
 	disabledAI=1;
 	joinUnassigned=0;
-	respawn=3;
+	respawn=1;
 	class Header
 	{
 		minPlayers=2;
@@ -35316,7 +35331,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=147;
+		items=151;
 		class Item0
 		{
 			dataType="Group";
@@ -43689,7 +43704,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={64,5,157.5};
-					angle=4.7120399;
+					angle=4.7120385;
 					class Attributes
 					{
 						condition="vehicle player in thisList";
@@ -48765,6 +48780,54 @@ class Mission
 			};
 			title="Sync objects with this game logic and they'll show up on the map (great for showing your track on the map)";
 			id=14488;
+		};
+		class Item147
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={248.617,5,105.796};
+			};
+			isPlayer=1;
+			description="Race Spectator / Commentator";
+			id=14533;
+			type="ace_spectator_virtual";
+		};
+		class Item148
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={252,5,106};
+			};
+			isPlayer=1;
+			description="Race Spectator / Commentator";
+			id=14534;
+			type="ace_spectator_virtual";
+		};
+		class Item149
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={255.2287,5,106.05827};
+			};
+			isPlayer=1;
+			description="Race Spectator / Commentator";
+			id=14535;
+			type="ace_spectator_virtual";
+		};
+		class Item150
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={258.18478,5,105.85912};
+			};
+			isPlayer=1;
+			description="Race Spectator / Commentator";
+			id=14536;
+			type="ace_spectator_virtual";
 		};
 	};
 };

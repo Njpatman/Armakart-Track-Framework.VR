@@ -1,3 +1,8 @@
+// Exit if spectator
+if (hasInterface || isDedicated && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual")) exitWith {  // Check if player, even a host
+	//systemChat "You are a spectator";
+};
+
 //Sets up local variables
 Current_Laps = 1;
 initial_Lap = true;
