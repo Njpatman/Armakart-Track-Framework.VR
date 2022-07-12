@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=840;
+		nextID=852;
 	};
 	class Camera
 	{
 		pos[]={205.46878,83.978683,88.892502};
-		dir[]={-0.75610423,-0.58115977,0.30109608};
-		up[]={-0.53997695,0.81374347,0.21503215};
-		aside[]={0.36998275,-3.7137943e-007,0.92908674};
+		dir[]={-0.75606674,-0.58113092,0.30108139};
+		up[]={-0.53989714,0.81381011,0.2149982};
+		aside[]={0.36996517,0,0.92904568};
 	};
 };
 binarizationWanted=0;
@@ -37,13 +37,14 @@ addons[]=
 	"A3_Structures_F_Bootcamp_VR_Helpers",
 	"A3_Structures_F_Exp_Infrastructure_Pavements",
 	"A3_Misc_F_Helpers",
-	"A3_Modules_F"
+	"A3_Modules_F",
+	"Desert"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -92,6 +93,11 @@ class AddonsMetaData
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item7
+		{
+			className="Desert";
+			name="Desert";
 		};
 	};
 };
@@ -43689,7 +43695,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={64,5,157.5};
-					angle=4.7120399;
+					angle=4.7120385;
 					class Attributes
 					{
 						condition="vehicle player in thisList";
