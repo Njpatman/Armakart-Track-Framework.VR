@@ -8,7 +8,7 @@ class EditorData
 	toggles=518;
 	class ItemIDProvider
 	{
-		nextID=14526;
+		nextID=14538;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=840;
+		nextID=858;
 	};
 	class Camera
 	{
-		pos[]={205.46878,83.978683,88.892502};
-		dir[]={-0.75610423,-0.58115977,0.30109608};
-		up[]={-0.53997695,0.81374347,0.21503215};
-		aside[]={0.36998275,-3.7137943e-007,0.92908674};
+		pos[]={183.29385,119.24197,23.415161};
+		dir[]={-0.15460366,-0.79522359,0.58629125};
+		up[]={-0.20276913,0.6063059,0.76894516};
+		aside[]={0.96695608,-1.2881355e-007,0.25498557};
 	};
 };
 binarizationWanted=0;
@@ -37,13 +37,15 @@ addons[]=
 	"A3_Structures_F_Bootcamp_VR_Helpers",
 	"A3_Structures_F_Exp_Infrastructure_Pavements",
 	"A3_Misc_F_Helpers",
-	"A3_Modules_F"
+	"A3_Modules_F",
+	"Desert",
+	"ace_spectator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=9;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -93,6 +95,18 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item7
+		{
+			className="Desert";
+			name="Desert";
+		};
+		class Item8
+		{
+			className="ace_spectator";
+			name="ACE3 - Spectator";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
 	};
 };
 class DynamicSimulation
@@ -119,7 +133,7 @@ class ScenarioData
 	respawnDialog=0;
 	disabledAI=1;
 	joinUnassigned=0;
-	respawn=3;
+	respawn=1;
 	class Header
 	{
 		minPlayers=2;
@@ -35316,7 +35330,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=147;
+		items=152;
 		class Item0
 		{
 			dataType="Group";
@@ -43689,7 +43703,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={64,5,157.5};
-					angle=4.7120399;
+					angle=4.7120385;
 					class Attributes
 					{
 						condition="vehicle player in thisList";
@@ -48765,6 +48779,65 @@ class Mission
 			};
 			title="Sync objects with this game logic and they'll show up on the map (great for showing your track on the map)";
 			id=14488;
+		};
+		class Item147
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={189.38831,5,90.737724};
+			};
+			isPlayer=1;
+			description="Race Spectator / Commentator";
+			id=14533;
+			type="ace_spectator_virtual";
+		};
+		class Item148
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={192.7713,5,90.941727};
+			};
+			isPlayer=1;
+			description="Race Spectator / Commentator";
+			id=14534;
+			type="ace_spectator_virtual";
+		};
+		class Item149
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={196,5,91};
+			};
+			isPlayer=1;
+			description="Race Spectator / Commentator";
+			id=14535;
+			type="ace_spectator_virtual";
+		};
+		class Item150
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={198.95609,5,90.80085};
+			};
+			isPlayer=1;
+			description="Race Spectator / Commentator";
+			id=14536;
+			type="ace_spectator_virtual";
+		};
+		class Item151
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={194.57401,5,94.223};
+			};
+			title="[DO NOT DELETE]  Spectator Modules";
+			description="These modules add spectator slots. You should keep them close to the track.";
+			id=14537;
 		};
 	};
 };

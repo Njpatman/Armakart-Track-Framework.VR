@@ -1,3 +1,9 @@
+// Spec check - potato specific
+if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual")) exitWith {  // Check if player, even a host
+	//systemChat "You are a spectator";
+};
+
+
 //-------------Track Controls & Editable Variables-------------\\
 
 	//Track Title\\
