@@ -124,6 +124,9 @@ NJP_JIP_CHECK = {
     player allowDamage false;
     vehicle player allowDamage false;
     
+    //Sets player vic fuel to 0
+    vehicle player setFuel 0;
+    
     call NJP_Client_Fnc_Pre_Race_Phase;
 
 	};
@@ -147,6 +150,9 @@ NJP_JIP_CHECK = {
     //Makes player/player vic invincible
     player allowDamage false;
     vehicle player allowDamage false;
+    
+    //Sets player vic fuel to 0
+    vehicle player setFuel 0;
     
     call NJP_Client_Fnc_Pre_Race_Phase;
 
