@@ -477,6 +477,11 @@ NJP_Client_Fnc_Scoreboard = {
 //Everything that happens to create the "Pre-Race Phase"
 NJP_Client_Fnc_Pre_Race_Phase = {
 
+  // Exit if spectator
+  if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) exitWith {  // Check if player, even a host
+	systemChat "|Armakart System| : Detected that player is a spectator, skipping NJP_Client_Fnc_Pre_Race_Phase";
+  };
+
   if !(hasInterface) exitWith {};
 
   if (RACE_PHASE isEqualTo "Customization_Phase") then {
