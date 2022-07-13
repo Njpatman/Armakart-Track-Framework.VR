@@ -5,8 +5,8 @@
 */
 
 // Exit if spectator
-if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual")) exitWith {  // Check if player, even a host
-	//systemChat "You are a spectator";
+if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) exitWith {  // Check if player, even a host
+	systemChat "|Armakart System| : Detected that player is a spectator, skipping Stat_Race.sqf; You will still hear the intro music.";
 };
 
 //Track orbiting shot
