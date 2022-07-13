@@ -21,9 +21,6 @@ Places_Live = [];
 //Setsup "Scoreboard_Active"
 Scoreboard_Active = false;
 
-ALL_PLAYERS_COMPLETED = false;
-NO_LOOPING = false;
-
 //Number of Laps/Checkpoints
 Laps_number = ["Laps_number", 3] call BIS_fnc_getParamValue; // Can be as high as you want, just don't go under 2
 
