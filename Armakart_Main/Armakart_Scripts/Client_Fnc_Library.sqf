@@ -160,6 +160,8 @@ NJP_JIP_CHECK = {
 
 	if (RACE_PHASE isEqualTo "Race_Started") exitWith {
 
+    Player_Finished = true;
+
 		_Group = createGroup sideLogic;
 
    	[player] joinSilent _Group;
@@ -185,9 +187,19 @@ NJP_JIP_CHECK = {
 
     systemChat "|Armakart System| : JIP'd past race start, pushing into spectator...";
 
+    uiSleep 5;
+
+    if (!isNull objectParent player) then {
+
+      deleteVehicle vehicle player;
+      
+    };
+
 	};
 
   if (RACE_PHASE isEqualTo "Race_Stopped") exitWith {
+
+    Player_Finished = true;
 
 		_Group = createGroup sideLogic;
 
@@ -405,6 +417,10 @@ NJP_Client_Fnc_Scoreboard = {
   #define _Scoreboard_UI uiNamespace getVariable ["Places_UI", controlNull]
 
   if (!Player_Finished) then {
+
+    _Group = createGroup sideLogic;
+
+   	[player] joinSilent _Group;
 
     Player_Finished = true;
 
