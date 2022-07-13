@@ -117,14 +117,17 @@ if (Voting_Phase_Enabled isEqualTo 1) then { call NJP_Server_Voting_Phase; } els
 	
     ["Customization_Timer_Layer", 0.001] remoteExec ["cutFadeOut", 0, true];
 
-	//Remove timer display
-  	[( "Timer" call BIS_fnc_rscLayer ), ["", "PLAIN"]] remoteExec ["cutText", 0, true];
+    //Remove timer display
+    [( "Timer" call BIS_fnc_rscLayer ), ["", "PLAIN"]] remoteExec ["cutText", 0, true];
+	
+    RACE_PHASE = "Race_Started";
+    publicVariable "RACE_PHASE";
 
     diag_log "//----------------------------------------------------------------------------\\";
     diag_log "|Armakart System| : Completed Customization Phase & skipped Voting phase.";
     diag_log format ["|Armakart FPS| : Current server FPS: %1.", diag_fps];
-	diag_log format ["|Armakart FPS| : Current minimal server FPS: %1.", diag_fpsMin];
-	diag_log "\\----------------------------------------------------------------------------//";
+    diag_log format ["|Armakart FPS| : Current minimal server FPS: %1.", diag_fpsMin];
+    diag_log "\\----------------------------------------------------------------------------//";
 
 };
 
@@ -157,9 +160,6 @@ _ATF_Version = getText (missionConfigFile >> "ATF_Version");
 _Start_Race_Server_Side = execVM "Armakart_Main\Armakart_Scripts\Start_Race.sqf";
 
 ["Armakart_Main\Armakart_Scripts\Live_Place.sqf"] remoteExec ["execVM", 0, false];
-
-RACE_PHASE = "Race_Started";
-publicVariable "RACE_PHASE";
 
 waitUntil {scriptDone _Start_Race_Server_Side};
 
