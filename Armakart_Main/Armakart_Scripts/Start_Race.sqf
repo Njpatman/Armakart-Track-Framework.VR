@@ -6,7 +6,41 @@
 
 // Exit if spectator
 if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) exitWith {  // Check if player, even a host
-	systemChat "|Armakart System| : Detected that player is a spectator, skipping Stat_Race.sqf; You will still hear the intro music.";
+	
+	systemChat "|Armakart System| : Detected that player is a spectator, skipping Stat_Race.sqf; You will still hear the intro music and see the countdown.";
+
+	uiSleep 11.6;
+
+	//Display a countdown on players screen, with sfx to boot
+
+	playsound"start";
+
+	//5
+	["<t color='#ff0000' size='3'>5</t>",-1,-1,0.165,0,0,789] call BIS_fnc_dynamicText;
+
+	playMusic "";
+
+	//4
+	["<t color='#ff0000' size='3'>4</t>",-1,-1,0.165,0,0,789] call BIS_fnc_dynamicText;
+
+
+	playsound"start";
+	playsound"count";
+
+	//3
+	["<t color='#fcf403' size='3'>3</t>",-1,-1,0.165,0,0,789] call BIS_fnc_dynamicText;
+
+	//2
+	["<t color='#fcf403' size='3'>2</t>",-1,-1,0.165,0,0,789] call BIS_fnc_dynamicText;
+
+	//1
+	["<t color='#57de18' size='3'>1</t>",-1,-1,0.165,0,0,789] call BIS_fnc_dynamicText;
+
+	systemChat "|Armakart System| : Begin the race!";
+
+	//GO!
+	["<t color='#db9f07' size='4'>GO!</t>",-1,-1,0.165,0,0,789] call BIS_fnc_dynamicText;
+
 };
 
 //Track orbiting shot
