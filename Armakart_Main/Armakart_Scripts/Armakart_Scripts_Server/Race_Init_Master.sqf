@@ -70,7 +70,7 @@ uiSleep 1.65;
 
 //Creates Customization Menu
 ["Customization_Timer_Layer", ["Customization_Timer_UI", "PLAIN"]] remoteExec ["cutRsc", 0, true];
-["Customization_Menu"] remoteExec ["createDialog", 0];
+["Customization_Menu"] remoteExec ["createDialog", 0, false];
 
 ["dynamicBlur",  true] remoteExec ["ppEffectEnable", 0, false];
 ["dynamicBlur",  [6]] remoteExec ["ppEffectAdjust", 0, false];
