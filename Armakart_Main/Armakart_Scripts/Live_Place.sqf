@@ -5,6 +5,12 @@
 */ 
 if !(hasInterface) exitWith {};
 
+// Exit if spectator
+if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual")) exitWith {  // Check if player, even a host
+	//systemChat "You are a spectator";
+};
+
+
 #define _Personal_UI_Places uiNamespace getVariable ["Place_UI", controlNull]
 #define _Personal_UI_CPs uiNamespace getVariable ["Personal_UI_CPs", controlNull]
 #define _Personal_UI_Laps uiNamespace getVariable ["Personal_UI_Laps", controlNull]
