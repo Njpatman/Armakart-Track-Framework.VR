@@ -2,6 +2,21 @@
 if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual")) exitWith {  // Check if player, even a host
 
 	Player_Finished = true;
+	UI_Color = [0.133,0.349,0.522,0.65];
+	UI_Color_int = [0,11] call BIS_fnc_randomInt;
+	//Sets the color values for UI Color Toggle function
+	Light_Blue = [0.133,0.349,0.522,0.65];
+	Light_Green = [0.114,0.639,0.255,0.65];
+	Light_Red = [0.749,0.141,0.129,0.65];
+	Light_Orange = [0.961,0.404,0.106,0.65];
+	Dark_Blue = [0,0.051,1,0.65];
+	Purple = [0.584,0,1,0.65];
+	Pink = [1,0.02,0.855,0.65];
+	Blue_violet = [0.451,0.4,0.741,0.65];
+	Bronze = [0.69,0.549,0.341,0.65];
+	Rose_Gold = [0.718,0.431,0.475,0.65];
+	Yellow = [1,1,0,0.65];
+	Khaki = [0.741,0.718,0.42,0.65];
 
 	//Still need to compile client functions since certain functions are needed to show the scoreboard.
 	_Client_Fnc_init = execVM "Armakart_Main\Armakart_Scripts\Client_Fnc_Library.sqf";
