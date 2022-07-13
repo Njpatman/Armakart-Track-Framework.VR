@@ -64,6 +64,6 @@ waitUntil {scriptDone _Client_Fnc_init};
 //Sets players initial character
 ["Farmer"] call NJP_Client_Fnc_Character_Swap;
 
-call NJP_JIP_CHECK;
-
 systemChat "|Armakart System| : Client initialization completed!";
+
+call NJP_JIP_CHECK;
