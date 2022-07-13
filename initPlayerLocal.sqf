@@ -1,11 +1,15 @@
 // Exit if spectator
 if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual")) exitWith {  // Check if player, even a host
-	//systemChat "You are a spectator";
 
 	Player_Finished = true;
 
 	//Still need to compile client functions since certain functions are needed to show the scoreboard.
 	_Client_Fnc_init = execVM "Armakart_Main\Armakart_Scripts\Client_Fnc_Library.sqf";
+
+	waitUntil {scriptDone _Client_Fnc_init};
+
+	systemChat "|Armakart System| : Spectator Client initialization completed!";
+
 };
 
 //Sets up local variables
