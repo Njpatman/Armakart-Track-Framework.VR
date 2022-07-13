@@ -3,6 +3,9 @@
 * - Checks if a player or all players finish, and executes code for each respective scenario.
 * 
 */ 
+
+ALL_PLAYERS_COMPLETED = false;
+NO_LOOPING = false;
 	
 while {(RACE_PHASE isEqualTo "Race_Started")} do
 {
