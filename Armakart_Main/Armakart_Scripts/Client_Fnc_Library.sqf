@@ -166,6 +166,8 @@ NJP_JIP_CHECK = {
 
 		[true] call ace_spectator_fnc_setSpectator;
 
+    disableSerialization;
+
     //Remove timer display
     ( "Timer" call BIS_fnc_rscLayer ) cutText ["", "PLAIN"];
 
@@ -192,6 +194,8 @@ NJP_JIP_CHECK = {
    	[player] joinSilent _Group;
 
 		[true] call ace_spectator_fnc_setSpectator;
+
+    disableSerialization;
 
     //Remove timer display
     ( "Timer" call BIS_fnc_rscLayer ) cutText ["", "PLAIN"];
@@ -241,6 +245,23 @@ fnc_BlockKeyDown = {
 }; 
 
 NJP_Client_Fnc_Voting_Phase_Edit = {
+
+  // Exit if spectator
+  if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) exitWith {  // Check if player, even a host
+	  systemChat "|Armakart System| : Detected that player is a spectator, skipping NJP_Client_Fnc_Voting_Phase_Edit";
+
+    disableSerialization;
+
+    #define _Pre_Race_UI_Bottom uiNamespace getVariable ["Pre_Race_UI_Bottom", controlNull]
+    #define _Timer_Title uiNamespace getVariable ["Timer_Title", controlNull]
+
+    _Pre_Race_UI_Bottom ctrlSetStructuredText parseText "<br/> <t align = 'center' size='1'> </t>";
+
+    _Timer_Title ctrlSetStructuredText parseText "<t align = 'center'  size='2'>--- Voting Time Left ---</t>";
+
+    closeDialog 1235;
+	
+  };
 
   disableSerialization;
 
@@ -480,6 +501,16 @@ NJP_Client_Fnc_Pre_Race_Phase = {
   // Exit if spectator
   if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) exitWith {  // Check if player, even a host
 	systemChat "|Armakart System| : Detected that player is a spectator, skipping NJP_Client_Fnc_Pre_Race_Phase";
+
+    uiSleep 1.72;
+
+    disableSerialization;
+
+    #define _Pre_Race_UI_Bottom uiNamespace getVariable ["Pre_Race_UI_Bottom", controlNull]
+    _Pre_Race_UI_Bottom ctrlSetStructuredText parseText "<br/> <t align = 'center' size='1'> </t>";
+
+    closeDialog 1234;
+
   };
 
   if !(hasInterface) exitWith {};
