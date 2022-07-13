@@ -127,6 +127,9 @@ NJP_Server_Voting_Phase = {
 
   [1235] remoteExec [ "closeDialog", 0, true];
 
+  RACE_PHASE = "Race_Started";
+  publicVariable "RACE_PHASE";
+
   [( "Timer" call BIS_fnc_rscLayer ), ["", "PLAIN"]] remoteExec ["cutText", 0, true];
 
   ["Black_Screen_Layer", ["", "BLACK FADED", 150]]  remoteExec ["cutText", 0, false];
