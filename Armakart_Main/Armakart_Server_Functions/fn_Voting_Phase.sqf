@@ -168,7 +168,7 @@ switch (_Time) do {
 	case Time_Early_Morning: {
 		
 		"|Armakart Track Time| : Early Morning won the vote!" remoteExec ["systemChat", 0, true];
-		skipTime ((6.45 - daytime + 24) % 24);
+		skipTime ((5.45 - daytime + 24) % 24);
 
 	};
 		
