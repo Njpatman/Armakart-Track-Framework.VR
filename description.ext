@@ -1,18 +1,18 @@
 //UI Stuff, don't touch pls
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-#include "Armakart_Main\Armakart_Scripts\Armakart_Scripts_UI\Defines.hpp"
+#include "Armakart_Main\Armakart_UI_&_Textures\Defines.hpp"
 
-#include "Armakart_Main\Armakart_Scripts\Armakart_Scripts_UI\Customization_Menu.hpp"
+#include "Armakart_Main\Armakart_UI_&_Textures\Customization_Menu.hpp"
 
-#include "Armakart_Main\Armakart_Scripts\Armakart_Scripts_UI\Voting_Menu.hpp"
+#include "Armakart_Main\Armakart_UI_&_Textures\Voting_Menu.hpp"
 
-#include "Armakart_Main\Armakart_Scripts\Armakart_Scripts_UI\Scoreboard.hpp"
+#include "Armakart_Main\Armakart_UI_&_Textures\Scoreboard.hpp"
 
-#include "Armakart_Main\Params.hpp"
+#include "Armakart_Main\Armakart_Params.hpp"
 
 class RscTitles
 {
-	#include "Armakart_Main\Armakart_Scripts\Armakart_Scripts_UI\Player_UI.hpp"
+	#include "Armakart_Main\Armakart_UI_&_Textures\Player_UI.hpp"
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -59,7 +59,9 @@ class CfgSounds
 class CfgFunctions
 {
 
-   #include "Armakart_Main\Armakart_Scripts\Armakart_Scripts_Whale's_Nametags\functions\wha_nametags_functions.hpp"
+   #include "Armakart_Main\Armakart_Server_Functions\Armakart_Server_Functions.hpp"
+
+   #include "Armakart_Main\Armakart_Client_Functions\Armakart_Client_Functions.hpp"
    
 };
 
