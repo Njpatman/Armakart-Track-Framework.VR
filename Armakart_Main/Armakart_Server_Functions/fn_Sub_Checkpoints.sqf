@@ -12,7 +12,7 @@
 
 	_x hideObjectGlobal true;
 
-	uiSleep 0.1;
+	uiSleep 0.05;
 
 	[_Sub_CP_Trigger, Sub_CP_Size_Array] remoteExec ["setTriggerArea", 0, true];
 	[_Sub_CP_Trigger, ["WEST", "PRESENT", true]] remoteExec ["setTriggerActivation", 0, true];
