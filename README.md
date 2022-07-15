@@ -15,7 +15,7 @@ You no longer need checkpoint triggers in the editor, you can remove all checkpo
 
 In the Finish line trigger, replace whatever is in the "On Activation" box with: call NJP_Client_Fnc_Finish_Line;
 
-In each powerup blocks' atributes in the editor, scroll all the way down until you hit the Object Specific atribute, canhe Texture #0 and Texture #1 to:
+In each powerup blocks' atributes in the editor, scroll all the way down until you hit the Object Specific atribute, change Texture #0 and Texture #1 to:
 
 Armakart_Main\Armakart_UI_&_Textures\Powerup_Block.paa
 
