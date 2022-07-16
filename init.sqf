@@ -2,7 +2,7 @@
 
 	//Track Title\\
 
-		Track_Title = 'Sewers'; // Should be name of your track, shown at intro.
+		Track_Title = 'Framework'; // Should be name of your track, shown at intro.
 
 	//Checkpoint & Sub Checkpoint Size Arrays\\
 
@@ -18,14 +18,14 @@
 
 	//Intro Cam Controls\\
 
-		Radius_cam = 16; // Circle radius (distance to the checkpoints) 
+		Radius_cam = 125; // Circle radius (distance to the checkpoints).
 
-		Angle_cam = random 360;// Starting angle (compass direction) 
+		Angle_cam = random 360; // Starting angle (compass direction).
 
-		Altitude_cam = 0; // Camera altitude (height above ground) 
+		Altitude_cam = 50; // Camera altitude (height above ground).
 
-		Speed_cam = 0.26; // Higher is faster
-		
+		Speed_cam = 0.06; // Higher is faster.
+
 	//Kart Classname\\
 
 		Kart_Classname = "C_Quadbike_01_F";
