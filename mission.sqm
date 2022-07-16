@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=912;
+		nextID=918;
 	};
 	class Camera
 	{
@@ -38,14 +38,13 @@ addons[]=
 	"A3_Structures_F_Exp_Infrastructure_Pavements",
 	"A3_Misc_F_Helpers",
 	"A3_Modules_F",
-	"SE_SEVA_Oxygen_Tank",
 	"ace_spectator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=9;
+		items=8;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -96,12 +95,6 @@ class AddonsMetaData
 			url="https://www.arma3.com";
 		};
 		class Item7
-		{
-			className="SE_SEVA_Oxygen_Tank";
-			name="SE_SEVA_Oxygen_Tank";
-			author="S.T.A.L.K.E.R. Equipment";
-		};
-		class Item8
 		{
 			className="ace_spectator";
 			name="ACE3 - Spectator";
