@@ -43,7 +43,7 @@ While {!scriptDone _Powerup_Block_Init || !scriptDone _Sub_CP_Init || !scriptDon
 
 };
 
-["Edit_Initial_Loading_Screen", CP_NUM, SUB_CP_NUM, PWR_BLK_NUM] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
+["Edit_Initial_Loading_Screen", Loaded_CP_NUM, Loaded_SUB_CP_NUM, Loaded_PWR_BLK_NUM] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
 
 if (!isNil "potato_safeStart_fnc_toggleSafeStart") then { [false] call potato_safeStart_fnc_toggleSafeStart; };
 
