@@ -215,6 +215,8 @@ _Reset_Checkpoint = ["Reset_Checkpoint","<t color='#731717'>RESET</t>","\a3\ui_f
 
 		[] call compile CP_str;
 
+		vehicle player setDamage 0;
+
 		//have to remoteExec for doubles
 		[vehicle player, (getDir CP_obj)] remoteExec ['setDir', vehicle player, true];
 		[vehicle player, (surfaceNormal position vehicle player)] remoteExec ['setVectorUp', vehicle player, true];

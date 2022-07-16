@@ -30,7 +30,7 @@ _Sub_CP_Init = [] spawn NJP_Server_fnc_Sub_Checkpoints;
 //Initializes Powerup Blocks
 _Powerup_Block_Init = [] spawn NJP_Server_fnc_Powerup_Blocks;
 
-["Initial_Loading_Layer", ["Loading_Screen", "PLAIN"]] remoteExec ["cutRsc", 0, true];
+["Initial_Loading_Layer", ["Loading_Screen", "PLAIN"]] remoteExec ["cutRsc", 0, false];
 
 remoteExec ["NJP_Client_fnc_Pre_Race_Phase", 0, false];
 
@@ -39,7 +39,7 @@ While {!scriptDone _Powerup_Block_Init || !scriptDone _Sub_CP_Init || !scriptDon
 
 	["Edit_Initial_Loading_Screen", Loaded_CP_NUM, Loaded_SUB_CP_NUM, Loaded_PWR_BLK_NUM] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
 
-	uiSleep 0.2;
+	uiSleep 0.225;
 
 };
 

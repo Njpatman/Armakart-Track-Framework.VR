@@ -10,7 +10,7 @@ publicVariable "RACE_PHASE";
 //Creates the Voting menu
 ["Voting_Menu"] remoteExec ["createDialog", 0, false];
 
-["Edit_Voting_Phase"] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
+["Edit_Voting_Phase"] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, false];
 
 _color = "#45f442";//green
 
@@ -48,9 +48,9 @@ publicVariable "RACE_PHASE";
 
 ["Black_Screen_Layer", ["", "BLACK FADED", 150]]  remoteExec ["cutText", 0, false];
 
-["Track_Loading_Layer", ["Loading_Screen", "PLAIN"]] remoteExec ["cutRsc", 0, true];
+["Track_Loading_Layer", ["Loading_Screen", "PLAIN"]] remoteExec ["cutRsc", 0, false];
 
-["Edit_Track_Loading_Screen", false] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
+["Edit_Track_Loading_Screen", false] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, false];
 
 //Begin tallying and applying weather effects and time
 diag_log "//----------------------------------------------------------------------------\\";
@@ -161,9 +161,9 @@ switch (_Weather) do {
 
 };
 
-[format ["|Armakart Voting System| : %1 won and got %2/%3 of the player votes!", GUI_Weather, _Weather, (Weather_Clear + Weather_Cloudy + Weather_Foggy + Weather_Light_Rain + Weather_Stormy)]] remoteExec ["systemChat", 0, true];
+[format ["|Armakart Voting System| : %1 won and got %2/%3 of the player votes!", GUI_Weather, _Weather, (Weather_Clear + Weather_Cloudy + Weather_Foggy + Weather_Light_Rain + Weather_Stormy)]] remoteExec ["systemChat", 0, false];
 
-["Edit_Track_Loading_Screen", false, GUI_Weather] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
+["Edit_Track_Loading_Screen", false, GUI_Weather] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, false];
 
 uiSleep 3.25;
 
@@ -221,9 +221,9 @@ diag_log format ["|Armakart FPS| : Current server FPS: %1.", diag_fps];
 diag_log format ["|Armakart FPS| : Current minimal server FPS: %1.", diag_fpsMin];
 diag_log "\\----------------------------------------------------------------------------//";
 
-[format ["|Armakart Voting System| : %1 won and got %2/%3 of the player votes!", GUI_Time, _Time, (Time_Early_Morning + Time_Noon + Time_Late_Afternoon + Time_Night + Time_Night_Full_Moon)]] remoteExec ["systemChat", 0, true];
+[format ["|Armakart Voting System| : %1 won and got %2/%3 of the player votes!", GUI_Time, _Time, (Time_Early_Morning + Time_Noon + Time_Late_Afternoon + Time_Night + Time_Night_Full_Moon)]] remoteExec ["systemChat", 0, false];
 
-["Edit_Track_Loading_Screen", true, GUI_Weather, GUI_Time] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
+["Edit_Track_Loading_Screen", true, GUI_Weather, GUI_Time] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, false];
 
 call NJP_Server_Fnc_Weather;
 

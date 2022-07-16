@@ -1,6 +1,10 @@
 if !(hasInterface) exitWith {};
 
+#include "\a3\ui_f\hpp\defineDIKCodes.inc"
+
 #define _Scoreboard_UI uiNamespace getVariable ["Places_UI", controlNull]
+
+waitUntil {!isNil "Player_Finished"};
 
 if (!Player_Finished) then {
 

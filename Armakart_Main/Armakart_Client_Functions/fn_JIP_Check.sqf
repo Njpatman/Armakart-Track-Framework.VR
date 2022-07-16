@@ -2,7 +2,7 @@ if (!didJIP || (typeOf player isEqualTo "potato_spectate_spectator" || typeOf pl
 
 waitUntil {!isNull player && !isNil "RACE_PHASE"};
 
-uiSleep 0.5;
+uiSleep 1;
 
 if (RACE_PHASE isEqualTo "Customization_Phase" && !(typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) exitWith {
 
@@ -43,7 +43,7 @@ if (RACE_PHASE isEqualTo "Voting_Phase" && !(typeOf player isEqualTo "potato_spe
 
 	("Timer" call BIS_fnc_rscLayer) cutRsc ["Timer", "PLAIN"];
 
-	call NJP_Client_Fnc_Voting_Phase_Client_Edit;
+	["Edit_Voting_Phase"] call NJP_Client_Fnc_GUI_Edit;
 
 	waitUntil {!isNull objectParent player};
 

@@ -102,7 +102,7 @@ class Params {
 
 		texts[] = {"Yes", "No"};
         values[] = {1, 2};
-		default = 1;
+		default = 2;
 	};
 	class Voting_Phase_Time {
 		title = "Voting Phase time";

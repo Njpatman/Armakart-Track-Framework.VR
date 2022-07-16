@@ -2,7 +2,7 @@
 ["Customization_Timer_Layer", ["Customization_Timer_UI", "PLAIN"]] remoteExec ["cutRsc", 0, true];
 ["Customization_Menu"] remoteExec ["createDialog", 0, false];
 
-remoteExec ["NJP_Client_fnc_UI_Color_Swap", 0];
+remoteExec ["NJP_Client_fnc_UI_Color_Swap", 0, false];
 
 [[],{ 
 	
