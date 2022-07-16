@@ -1,22 +1,3 @@
-//UI Stuff, don't touch pls
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-#include "Armakart_Main\Armakart_UI_&_Textures\Defines.hpp"
-
-#include "Armakart_Main\Armakart_UI_&_Textures\Customization_Menu.hpp"
-
-#include "Armakart_Main\Armakart_UI_&_Textures\Voting_Menu.hpp"
-
-#include "Armakart_Main\Armakart_UI_&_Textures\Scoreboard.hpp"
-
-#include "Armakart_Main\Armakart_Params.hpp"
-
-class RscTitles
-{
-	#include "Armakart_Main\Armakart_UI_&_Textures\Player_UI.hpp"
-};
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-
 // Settings
 respawnOnStart = -1;
 respawnButton = 0;
@@ -24,6 +5,7 @@ respawnButton = 0;
 ATF_Version = "Armakart V2.5";
 onLoadName = Armakart;
 onLoadMission = Make sure to turn your music up and read your brief!;
+loadScreen = "Armakart_Main\Armakart_Loading.jpg"; // Preview picture
 
 class CfgMusic
 {
@@ -88,3 +70,21 @@ class ACE_settings
 		force = 1;
 	};
 };
+
+//UI Stuff, don't touch pls
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+#include "Armakart_Main\Armakart_UI_&_Textures\Defines.hpp"
+
+#include "Armakart_Main\Armakart_UI_&_Textures\Customization_Menu.hpp"
+
+#include "Armakart_Main\Armakart_UI_&_Textures\Voting_Menu.hpp"
+
+#include "Armakart_Main\Armakart_UI_&_Textures\Scoreboard.hpp"
+
+#include "Armakart_Main\Armakart_Params.hpp"
+
+class RscTitles
+{
+	#include "Armakart_Main\Armakart_UI_&_Textures\Player_UI.hpp"
+};
+/////////////////////////////////////////////////////////////////////////////////////////////////////

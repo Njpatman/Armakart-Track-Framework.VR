@@ -4,6 +4,23 @@
 
 remoteExec ["NJP_Client_fnc_UI_Color_Swap", 0];
 
+[[],{ 
+	
+	if !(hasInterface) exitWith {};
+
+	if ((typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) then {
+
+		disableSerialization;
+
+		#define _Pre_Race_UI_Bottom uiNamespace getVariable ["Pre_Race_UI_Bottom", controlNull]
+		_Pre_Race_UI_Bottom ctrlSetStructuredText parseText "<br/> <t align = 'center' size='1'> </t>";
+
+		closeDialog 1234;
+
+	};
+
+}] remoteExec ["Spawn", 0, false];
+
 //- Adds a timer to the players screen, which should give the time until the next phase or race start -\\
 
 [( "Timer" call BIS_fnc_rscLayer ), ["Timer", "PLAIN"]] remoteExec ["cutRsc", 0];

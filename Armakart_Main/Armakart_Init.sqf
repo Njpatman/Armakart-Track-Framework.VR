@@ -54,6 +54,10 @@ if (isServer) then
 	Time_Night = 0;
 	Time_Night_Full_Moon = 0;
 
+	Loaded_CP_NUM = 0;
+	Loaded_SUB_CP_NUM = 0;
+	Loaded_PWR_BLK_NUM = 0;
+
 	NJP_Server_fnc_Weather_Clear_Vote = { Weather_Clear = Weather_Clear + 1; };
 	NJP_Server_fnc_Weather_Cloudy_Vote = { Weather_Cloudy = Weather_Cloudy + 1; };
 	NJP_Server_fnc_Weather_Foggy_Vote = { Weather_Foggy = Weather_Foggy + 1; };

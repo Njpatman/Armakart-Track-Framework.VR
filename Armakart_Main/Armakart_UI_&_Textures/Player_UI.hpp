@@ -1,3 +1,182 @@
+class Loading_Screen	
+{
+	idd = 1435;
+
+	duration = 99999999999;
+	fadein = 0;
+	fadeout = 0;
+	movingEnable = false;
+
+	class controls
+	{
+
+		////////////////////////////////////////////////////////
+		// GUI EDITOR OUTPUT START (by Njpatman, v1.063, #Xohyxi)
+		////////////////////////////////////////////////////////
+
+		class RscStructuredText_1105: RscStructuredText
+		{
+			idc = 1102;
+			font = "puristaMedium";
+			onload = "uiNamespace setVariable [ 'Loading_Screen_Main_Display', _this select 0 ];";
+
+			x = 0.2525 * safezoneW + safezoneX;
+			y = 0.126 * safezoneH + safezoneY;
+			w = 0.495 * safezoneW;
+			h = 0.352 * safezoneH;
+		};
+		class RscStructuredText_1204: RscStructuredText
+		{
+			idc = 1103;
+			font = "puristaMedium";
+			onload = "uiNamespace setVariable [ 'Loading_Screen_Left_Mid_Display', _this select 0 ];";
+
+			x = 0.298906 * safezoneW + safezoneX;
+			y = 0.588 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscStructuredText_1104: RscStructuredText
+		{
+			idc = 1104;
+			font = "puristaMedium";
+			onload = "uiNamespace setVariable [ 'Loading_Screen_Left_Bottom_Display', _this select 0 ];";
+
+			x = 0.273125 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.134062 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscStructuredText_1100: RscStructuredText
+		{
+			idc = 1105;
+			font = "puristaMedium";
+			onload = "uiNamespace setVariable [ 'Loading_Screen_Middle_Mid_Display', _this select 0 ];";
+
+			x = 0.432969 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.134062 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscStructuredText_1101: RscStructuredText
+		{
+			idc = 1106;
+			font = "puristaMedium";
+			onload = "uiNamespace setVariable [ 'Loading_Screen_Right_Mid_Display', _this select 0 ];";
+
+			x = 0.592812 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.134062 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscStructuredText_1103: RscStructuredText
+		{
+			idc = 1107;
+			font = "puristaMedium";
+			onload = "uiNamespace setVariable [ 'Loading_Screen_Middle_Bottom_Display', _this select 0 ];";
+
+			x = 0.45875 * safezoneW + safezoneX;
+			y = 0.588 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscStructuredText_1106: RscStructuredText
+		{
+			idc = 1108;
+			font = "puristaMedium";
+			onload = "uiNamespace setVariable [ 'Loading_Screen_Right_Bottom_Display', _this select 0 ];";
+
+			x = 0.618594 * safezoneW + safezoneX;
+			y = 0.588 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscStructuredText_1107: RscStructuredText
+		{
+			idc = 1109;
+			font = "puristaMedium";
+			onload = "uiNamespace setVariable [ 'Loading_Screen_Bottom_Main_Display', _this select 0 ];";
+
+			x = 0.494844 * safezoneW + safezoneX;
+			y = 0.94 * safezoneH + safezoneY;
+			w = 0.495 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscFrame_1901: RscFrame
+		{
+			idc = 1901;
+
+			x = 0.618594 * safezoneW + safezoneX;
+			y = 0.588 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscFrame_1902: RscFrame
+		{
+			idc = 1902;
+
+			x = 0.298906 * safezoneW + safezoneX;
+			y = 0.588 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscFrame_1903: RscFrame
+		{
+			idc = 1903;
+
+			x = 0.273125 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.134062 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscFrame_1904: RscFrame
+		{
+			idc = 1904;
+
+			x = 0.2525 * safezoneW + safezoneX;
+			y = 0.126 * safezoneH + safezoneY;
+			w = 0.495 * safezoneW;
+			h = 0.352 * safezoneH;
+		};
+		class RscFrame_1905: RscFrame
+		{
+			idc = 1905;
+
+			x = 0.592812 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.134062 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscFrame_1906: RscFrame
+		{
+			idc = 1906;
+
+			x = 0.432969 * safezoneW + safezoneX;
+			y = 0.511 * safezoneH + safezoneY;
+			w = 0.134062 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		class RscFrame_1907: RscFrame
+		{
+			idc = 1907;
+
+			x = 0.45875 * safezoneW + safezoneX;
+			y = 0.588 * safezoneH + safezoneY;
+			w = 0.0825 * safezoneW;
+			h = 0.044 * safezoneH;
+		};
+		////////////////////////////////////////////////////////
+		// GUI EDITOR OUTPUT END
+		////////////////////////////////////////////////////////
+
+	};
+};
+
+
+
+
+
+
 class Crosshair	
 {
 	idd = 1345;
@@ -47,24 +226,6 @@ class In_Race_UI
 		// GUI EDITOR OUTPUT START (by Njpatman, v1.063, #Lequgu)
 		////////////////////////////////////////////////////////
 
-		class RscText_1000: RscText
-		{
-			idc = 1000;
-
-			x = 0.164844 * safezoneW + safezoneX;
-			y = 0.874 * safezoneH + safezoneY;
-			w = 0.0928125 * safezoneW;
-			h = 0.044 * safezoneH;
-		};
-		class RscText_1002: RscText
-		{
-			idc = 1002;
-
-			x = 0.0617187 * safezoneW + safezoneX;
-			y = 0.874 * safezoneH + safezoneY;
-			w = 0.0928125 * safezoneW;
-			h = 0.044 * safezoneH;
-		};
 		class RscFrame_1802: RscFrame
 		{
 			idc = 1802;
@@ -74,9 +235,9 @@ class In_Race_UI
 			w = 0.0928125 * safezoneW;
 			h = 0.044 * safezoneH;
 		};
-		class RscFrame_1803: RscFrame
+		class RscFrame_1805: RscFrame
 		{
-			idc = 1803;
+			idc = 18032;
 
 			x = 0.0617187 * safezoneW + safezoneX;
 			y = 0.874 * safezoneH + safezoneY;

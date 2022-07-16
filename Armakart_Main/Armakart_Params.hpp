@@ -44,8 +44,8 @@ class Params {
 	class Customization_Phase_Time {
 		title = "Customization Phase time";
 
-		texts[] = {"15", "25", "35", "45", "55", "65", "75", "85", "95", "105", "115", "125", "135"};
-        values[] = {15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135};
+		texts[] = {"15", "25", "35", "45", "55", "65", "75", "85", "95", "105", "115", "125", "135", "145", "155", "165"};
+        values[] = {15, 25, 35, 45, 55, 65, 75, 85, 95, 105, 115, 125, 135, 145, 155, 165};
 		default = 65;
 	};
 	class Sub_Space_3 {
@@ -107,9 +107,9 @@ class Params {
 	class Voting_Phase_Time {
 		title = "Voting Phase time";
 
-		texts[] = {"15", "25", "35", "45", "55", "65"};
-        values[] = { 15, 25, 35, 45, 55, 65};
-		default = 25;
+		texts[] = {"10", "20", "30", "40", "50", "60"};
+        values[] = { 10, 20, 30, 40, 50, 60};
+		default = 20;
 	};
 	class Sub_Space_7 {
 		title = "";

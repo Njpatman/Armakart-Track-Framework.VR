@@ -12,8 +12,6 @@ diag_log "\\--------------------------------------------------------------------
 
 ["Black_Screen_Layer", ["", "BLACK FADED", 150]] remoteExec ["cutText", 0, false];
 
-[parseText "<t color='#c77518' size='1.15'>Armakart is initializing, keep in mind that you have to ACE self-interact to reset to your last checkpoint!</t>",-1,-1,99,0,0,800] remoteExec ["BIS_fnc_dynamicText", 0, false];
-
 //Setsup "RACE_PHASE"
 RACE_PHASE = "Customization_Phase";
 publicVariable "RACE_PHASE";
@@ -32,17 +30,29 @@ _Sub_CP_Init = [] spawn NJP_Server_fnc_Sub_Checkpoints;
 //Initializes Powerup Blocks
 _Powerup_Block_Init = [] spawn NJP_Server_fnc_Powerup_Blocks;
 
-waitUntil {scriptDone _Powerup_Block_Init && scriptDone _Sub_CP_Init && scriptDone _CP_Init};
+["Initial_Loading_Layer", ["Loading_Screen", "PLAIN"]] remoteExec ["cutRsc", 0, true];
 
-"|Armakart System| : Armakart initialization completed, Starting Pre Race Phase..." remoteExec ["systemChat", 0, false];
+remoteExec ["NJP_Client_fnc_Pre_Race_Phase", 0, false];
+
+While {!scriptDone _Powerup_Block_Init || !scriptDone _Sub_CP_Init || !scriptDone _CP_Init} do {
+
+
+	["Edit_Initial_Loading_Screen", Loaded_CP_NUM, Loaded_SUB_CP_NUM, Loaded_PWR_BLK_NUM] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
+
+	uiSleep 0.2;
+
+};
+
+["Edit_Initial_Loading_Screen", CP_NUM, SUB_CP_NUM, PWR_BLK_NUM] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
 
 if (!isNil "potato_safeStart_fnc_toggleSafeStart") then { [false] call potato_safeStart_fnc_toggleSafeStart; };
 
 //- Handles the Customization Phase ACE Self Interact, and camera -\\
 
-remoteExec ["NJP_Client_fnc_Pre_Race_Phase", 0];
+uiSleep 3.25;
 
-uiSleep 1.65;
+["Initial_Loading_Layer", 0.001] remoteExec ["cutFadeOut", 0, true];
+["Black_Screen_Layer", ["", "BLACK IN", 3]] remoteExec ["cutText", 0, true];
 
 //Starts Customization Phase music and loops it
 [] Spawn
@@ -72,8 +82,8 @@ uiSleep 1.65;
 ["dynamicBlur",  [0.0]] remoteExec ["ppEffectAdjust", 0, false];
 ["dynamicBlur",  3] remoteExec ["ppEffectCommit", 0, false];
 
+["Initial_Loading_Layer", 0.001] remoteExec ["cutFadeOut", 0, true];
 ["Black_Screen_Layer", ["", "BLACK IN", 3]] remoteExec ["cutText", 0, true];
-[800, ["", "PLAIN"]] remoteExec ["cutText", 0, true];
 
 //put customization phase function here
 call NJP_Server_fnc_Customization_Phase;
@@ -125,6 +135,7 @@ remoteExec ["NJP_Client_fnc_Start_Race", -2];
 remoteExec ["NJP_Client_fnc_Live_Place", 0];
 
 call NJP_Client_fnc_Start_Race;
+
 RACE_PHASE = "Race_Started";
 
 diag_log "//----------------------------------------------------------------------------\\";
@@ -150,7 +161,6 @@ diag_log "\\--------------------------------------------------------------------
 		{
 
 			uiSleep 8.5;
-
 			not music_isPlaying
 
 		};

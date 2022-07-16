@@ -6,9 +6,9 @@
 
 	//Checkpoint & Sub Checkpoint Size Arrays\\
 
-		CP_Size_Array = [16, 16, 0, true, 20]; // Please reference https://community.bistudio.com/wiki/setTriggerArea to make sure you edit the right variables.
+		CP_Size_Array = [18, 18, 0, true, 25]; // Please reference https://community.bistudio.com/wiki/setTriggerArea to make sure you edit the right variables.
 
-		Sub_CP_Size_Array = [20, 20, 0, true, 20]; // Please reference https://community.bistudio.com/wiki/setTriggerArea to make sure you edit the right variables.
+		Sub_CP_Size_Array = [20, 20, 0, true, 25]; // Please reference https://community.bistudio.com/wiki/setTriggerArea to make sure you edit the right variables.
 
 	//Checkpoint Manual Trigger Placement Array\\
 

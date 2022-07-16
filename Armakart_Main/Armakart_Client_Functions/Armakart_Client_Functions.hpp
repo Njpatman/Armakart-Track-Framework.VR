@@ -17,7 +17,7 @@ class NJP_Client
 		class Start_Race {};
 		class UI_Color_Swap {};
 		class Update_Timer {};
-		class Voting_Phase_Client_Edit {};
+		class GUI_Edit {};
 		class Add_To_Places_Live_Array {};
 		class Delete_From_Places_Live_Array {};
 

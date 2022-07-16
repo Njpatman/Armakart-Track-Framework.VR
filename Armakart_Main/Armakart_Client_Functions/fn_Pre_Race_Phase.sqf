@@ -1,20 +1,4 @@
-if !(hasInterface) exitWith {};
-
-// Exit if spectator
-if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) exitWith {  // Check if player, even a host
-	
-	systemChat "|Armakart System| : Detected that player is a spectator, skipping NJP_Client_Fnc_Pre_Race_Phase";
-
-	uiSleep 1.72;
-
-	disableSerialization;
-
-	#define _Pre_Race_UI_Bottom uiNamespace getVariable ["Pre_Race_UI_Bottom", controlNull]
-	_Pre_Race_UI_Bottom ctrlSetStructuredText parseText "<br/> <t align = 'center' size='1'> </t>";
-
-	closeDialog 1234;
-
-};
+if (!hasInterface || (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) exitWith {};
 
 if (RACE_PHASE isEqualTo "Customization_Phase") then {
 

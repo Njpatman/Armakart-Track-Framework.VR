@@ -91,7 +91,7 @@ while {(RACE_PHASE isEqualTo "Race_Started")} do
 
 			uiSleep 5;
 
-			[parseText "<t color='#3275a8'>--- Race is ending, Places will be displayed momentarily! ---</t> <br/><br/> <t>If you haven't finished, you'll shortly be shoved into spectator and won't show on the Places Screen and are considered DNF</t>"] remoteExec ["hint", 0, true];
+			[parseText "<t color='#3275a8'>--- Race is ending, Places will be displayed momentarily! ---</t> <br/><br/> <t>If you haven't finished, you'll shortly be shoved into spectator and are considered DNF</t>"] remoteExec ["hint", 0, true];
 
 			uiSleep 2;
 				

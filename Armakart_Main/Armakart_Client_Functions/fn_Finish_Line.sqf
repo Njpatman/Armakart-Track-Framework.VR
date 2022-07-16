@@ -13,6 +13,11 @@ if (Current_Laps + 1 > Laps_number && Current_Checkpoint isEqualTo CP_NUM) exitW
 
 	Initial_hint = false;
 
+	["Armakart", "MyKeyButShift-er", "Powerup Action", {""}, {""}, [DIK_F, [true, false, false]], false, 0, true] call CBA_fnc_addKeybind;
+	["Armakart", "MyKey", "Powerup Action", {""}, {""}, [DIK_F, [false, false, false]], false, 0, true] call CBA_fnc_addKeybind;
+	["Armakart", "MyRKeyButShift-er", "Powerup Action", {""}, {""}, [DIK_R, [true, false, false]], false, 0, true] call CBA_fnc_addKeybind;
+	["Armakart", "MyRKey", "Powerup Action", {""}, {""}, [DIK_R, [false, false, false]], false, 0, true] call CBA_fnc_addKeybind;
+
 	Player_Finished = true;
 
 	_FINISHED_KART_NUM = KARTS_FINISHED + 1;
@@ -33,7 +38,7 @@ if (Current_Laps + 1 > Laps_number && Current_Checkpoint isEqualTo CP_NUM) exitW
 		_Name = profileName;
 		_Name_Dos = name _Driver;
 
-		[_Name, _Name_Dos] remoteExec ["NJP_Client_Fnc_Places_Pushback", 0, true];
+		[_Name, _Name_Dos, false] remoteExec ["NJP_Client_Fnc_Places_Pushback", 0, true];
 
 		[format ["|Armakart Doubles| : You & your buddy finished %1, make sure to notify him as he might not get this message", _FINISHED_KART_NUM_STR]] remoteexec ["systemChat", vehicle player, true];
 
@@ -43,7 +48,7 @@ if (Current_Laps + 1 > Laps_number && Current_Checkpoint isEqualTo CP_NUM) exitW
 
 		_Name = profileName;
 
-		[_Name] remoteExec ["NJP_Client_Fnc_Places_Pushback", 0, true];
+		[_Name, nil, false] remoteExec ["NJP_Client_Fnc_Places_Pushback", 0, true];
 
 		systemChat format ["|Armakart Singles| : You finished %1", _FINISHED_KART_NUM_STR];
 

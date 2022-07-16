@@ -5,29 +5,30 @@
 */
 
 {
+
+	_Sub_CP_name = vehicleVarName _x;
+
+	Loaded_SUB_CP_NUM = Loaded_SUB_CP_NUM + 1;
+
+	uiSleep 0.085;
+
+	if (!(_Sub_CP_name in Manual_Sub_Checkpoint_Array)) then {
 	
-	_Sub_CP_Trigger = createTrigger ["EmptyDetector", getPos _x];
-	_Sub_CP_Trigger attachTo [_x, [0,0,0]];
-	detach _Sub_CP_Trigger;
+		_Sub_CP_Trigger = createTrigger ["EmptyDetector", getPos _x];
+		_Sub_CP_Trigger attachTo [_x, [0,0,0]];
+		detach _Sub_CP_Trigger;
 
-	_x hideObjectGlobal true;
+		_x hideObjectGlobal true;
 
-	uiSleep 0.05;
+		[_Sub_CP_Trigger, Sub_CP_Size_Array] remoteExec ["setTriggerArea", 0, true];
+		[_Sub_CP_Trigger, ["WEST", "PRESENT", true]] remoteExec ["setTriggerActivation", 0, true];
+		[_Sub_CP_Trigger, ["vehicle player in thislist", 
+		"
+			_trigger = thisTrigger;
 
-	[_Sub_CP_Trigger, Sub_CP_Size_Array] remoteExec ["setTriggerArea", 0, true];
-	[_Sub_CP_Trigger, ["WEST", "PRESENT", true]] remoteExec ["setTriggerActivation", 0, true];
-	[_Sub_CP_Trigger, ["vehicle player in thislist", 
-	"
-	
-		_trigger = thisTrigger;
-
-		_Sub_CP = getPos _trigger nearestObject 'Sign_Arrow_Large_Cyan_F';
-			
-		Sub_CP_Name_str = vehicleVarName _Sub_CP;
-
-		{ if (Sub_CP_Name_str isEqualTo _x) exitWith {Sub_CP_Manual_Override = true;}; } forEach Manual_Sub_Checkpoint_Array;
-
-		if (!Sub_CP_Manual_Override) then {
+			_Sub_CP = getPos _trigger nearestObject 'Sign_Arrow_Large_Cyan_F';
+				
+			Sub_CP_Name_str = vehicleVarName _Sub_CP;
 
 			_Sub_CP_Num_Array = toArray Sub_CP_Name_str;
 
@@ -79,14 +80,12 @@
 
 			[] call compile Sub_CP_str;
 
-		} else {Sub_CP_Manual_Override = false;};
+		", ""] ] remoteExec ["setTriggerStatements", 0, true];
+		[_Sub_CP_Trigger, 0.5] remoteExec ["setTriggerInterval", 0, true];
 
-	", ""] ] remoteExec ["setTriggerStatements", 0, true];
-	[_Sub_CP_Trigger, 0.5] remoteExec ["setTriggerInterval", 0, true];
+	};
 
 } forEach (allMissionObjects "Sign_Arrow_Large_Cyan_F");
-
-"|Armakart System| : Sub Checkpoint initialization completed!" remoteExec ["systemChat", 0, true];
 
 diag_log "//----------------------------------------------------------------------------\\";
 diag_log "|Armakart System| : Completed Initializing Sub Checkpoints.";

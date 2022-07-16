@@ -4,6 +4,34 @@ if !(hasInterface) exitWith {};
 
 if (!Player_Finished) then {
 
+	if (player in (fullCrew [vehicle player, "cargo", false] select 0) && count units group player isEqualTo 2) then {
+
+		_Driver = driver vehicle player;
+
+		_Name = profileName;
+		_Name_Dos = name _Driver;
+
+		[_Name, _Name_Dos, true] remoteExec ["NJP_Client_Fnc_Places_Pushback", 0, true];
+
+		["|Armakart Doubles| : Race has ended, you & your buddy are DNF, make sure to notify him as he might not get this message"] remoteexec ["systemChat", vehicle player, true];
+
+	};
+
+	if (player in (fullCrew [vehicle player, "driver", false] select 0) && count units group player isEqualTo 1) then {
+
+		_Name = profileName;
+
+		[_Name, nil, true] remoteExec ["NJP_Client_Fnc_Places_Pushback", 0, true];
+
+		systemChat "|Armakart Singles| : Race has ended, you are considered DNF";
+
+	};
+
+	["Armakart", "MyKeyButShift-er", "Powerup Action", {""}, {""}, [DIK_F, [true, false, false]], false, 0, true] call CBA_fnc_addKeybind;
+	["Armakart", "MyKey", "Powerup Action", {""}, {""}, [DIK_F, [false, false, false]], false, 0, true] call CBA_fnc_addKeybind;
+	["Armakart", "MyRKeyButShift-er", "Powerup Action", {""}, {""}, [DIK_R, [true, false, false]], false, 0, true] call CBA_fnc_addKeybind;
+	["Armakart", "MyRKey", "Powerup Action", {""}, {""}, [DIK_R, [false, false, false]], false, 0, true] call CBA_fnc_addKeybind;
+
 	_Group = createGroup sideLogic;
 
 	[player] joinSilent _Group;
@@ -27,7 +55,7 @@ uiSleep 3;
 
 systemChat "|Armakart System| : Players sill in race have been moved to spectator, calling Scoreboard...";
 
-uiSleep 3;
+uiSleep 5;
 
 Scoreboard_Active = true;
 

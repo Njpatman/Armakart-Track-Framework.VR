@@ -6,26 +6,28 @@
 
 {
 
-	_CP_Trigger = createTrigger ["EmptyDetector", getPos _x];
-	_CP_Trigger attachTo [_x, [0,0,0]];
-	detach _CP_Trigger;
+	_CP_name = vehicleVarName _x;
 
-	uiSleep 0.1;
+	Loaded_CP_NUM = Loaded_CP_NUM + 1;
 
-	[_CP_Trigger, CP_Size_Array] remoteExec ["setTriggerArea", 0, true];
-	[_CP_Trigger, ["WEST", "PRESENT", true]] remoteExec ["setTriggerActivation", 0, true];
-	[_CP_Trigger, ["vehicle player in thisList",
-	"
-		_trigger = thisTrigger;
+	uiSleep 0.085;
 
-		_CP = getPos _trigger nearestObject 'VR_3DSelector_01_complete_F'; 
+	if !((_CP_name in Manual_Checkpoint_Array) || (_CP_name isEqualTo "CP_1")) then {
+
+		_CP_Trigger = createTrigger ["EmptyDetector", getPos _x];
+		_CP_Trigger attachTo [_x, [0,0,0]];
+		detach _CP_Trigger;
+
+		[_CP_Trigger, CP_Size_Array] remoteExec ["setTriggerArea", 0, true];
+		[_CP_Trigger, ["WEST", "PRESENT", true]] remoteExec ["setTriggerActivation", 0, true];
+		[_CP_Trigger, ["vehicle player in thisList",
+		"
+			_trigger = thisTrigger;
+
+			_CP = getPos _trigger nearestObject 'VR_3DSelector_01_complete_F'; 
+				
+			CP_Name_str = vehicleVarName _CP; 
 			
-		CP_Name_str = vehicleVarName _CP; 
-		
-		{ if (CP_Name_str isEqualTo _x || CP_Name_str isEqualTo 'CP_1') exitWith {CP_Manual_Override = true;}; } forEach Manual_Checkpoint_Array;
-
-		if (!CP_Manual_Override) then {
-		
 			_CP_Num_Array = toArray CP_Name_str; 
 			
 			_CP_Num_1 = _CP_Num_Array select 3; 
@@ -72,14 +74,12 @@
 			
 			};
 
-		} else {CP_Manual_Override = false;};
+		", ""] ] remoteExec ["setTriggerStatements", 0, true];
+		[_CP_Trigger, 0.5] remoteExec ["setTriggerInterval", 0, true];
 
-	", ""] ] remoteExec ["setTriggerStatements", 0, true];
-	[_CP_Trigger, 0.5] remoteExec ["setTriggerInterval", 0, true];
+	};
 
 } forEach (allMissionObjects "VR_3DSelector_01_complete_F");
-
-"|Armakart System| : Checkpoint initialization completed!" remoteExec ["systemChat", 0, true];
 
 diag_log "//----------------------------------------------------------------------------\\";
 diag_log "|Armakart System| : Completed Initializing Checkpoints.";

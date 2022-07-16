@@ -10,7 +10,7 @@ publicVariable "RACE_PHASE";
 //Creates the Voting menu
 ["Voting_Menu"] remoteExec ["createDialog", 0, false];
 
-remoteExec ["NJP_Client_Fnc_Voting_Phase_Client_Edit", 0, true];
+["Edit_Voting_Phase"] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
 
 _color = "#45f442";//green
 
@@ -48,7 +48,9 @@ publicVariable "RACE_PHASE";
 
 ["Black_Screen_Layer", ["", "BLACK FADED", 150]]  remoteExec ["cutText", 0, false];
 
-[parseText "<t color='#c77518' size='1.15'>Track Weather and Time are initializing, keep in mind that you have a GPS and MicroDAGR, and you have to ACE self-interact to reset to your last checkpoint. Otherwise, good luck!</t>",-1,-1,99,0,0,750] remoteExec ["BIS_fnc_dynamicText", 0, false];
+["Track_Loading_Layer", ["Loading_Screen", "PLAIN"]] remoteExec ["cutRsc", 0, true];
+
+["Edit_Track_Loading_Screen", false] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
 
 //Begin tallying and applying weather effects and time
 diag_log "//----------------------------------------------------------------------------\\";
@@ -57,15 +59,15 @@ diag_log format ["|Armakart FPS| : Current server FPS: %1.", diag_fps];
 diag_log format ["|Armakart FPS| : Current minimal server FPS: %1.", diag_fpsMin];
 diag_log "\\----------------------------------------------------------------------------//";
 
-uiSleep 2;
+uiSleep 1;
 
 _Weather = selectMax [Weather_Clear, Weather_Cloudy, Weather_Foggy, Weather_Light_Rain, Weather_Stormy];
 
 switch (_Weather) do {
 
 	case Weather_Clear: {
-		
-		"|Armakart Track Weather| : Clear won the vote!" remoteExec ["systemChat", 0, true];
+
+		GUI_Weather = 'Clear';
 
 		NJP_Server_Fnc_Weather = {
 
@@ -81,8 +83,8 @@ switch (_Weather) do {
 	};
 
 	case Weather_Cloudy: {
-		
-		"|Armakart Track Weather| : Cloudy won the vote!" remoteExec ["systemChat", 0, true];
+
+		GUI_Weather = 'Cloudy';
 
 		NJP_Server_Fnc_Weather = {
 
@@ -101,7 +103,7 @@ switch (_Weather) do {
 
 	case Weather_Foggy: {
 
-		"|Armakart Track Weather| : Foggy won the vote!" remoteExec ["systemChat", 0, true];
+		GUI_Weather = 'Foggy';
 
 		NJP_Server_Fnc_Weather = {
 
@@ -118,7 +120,7 @@ switch (_Weather) do {
 
 	case Weather_Light_Rain: {
 
-		"|Armakart Track Weather| : Light Rain won the vote!" remoteExec ["systemChat", 0, true];
+		GUI_Weather = 'Light Rain';
 
 		NJP_Server_Fnc_Weather = {
 
@@ -137,7 +139,7 @@ switch (_Weather) do {
 
 	case Weather_Stormy: {
 
-		"|Armakart Track Weather| : Stormy won the vote!" remoteExec ["systemChat", 0, true];
+		GUI_Weather = 'Stormy';
 
 		NJP_Server_Fnc_Weather = {
 
@@ -159,6 +161,10 @@ switch (_Weather) do {
 
 };
 
+[format ["|Armakart Voting System| : %1 won and got %2/%3 of the player votes!", GUI_Weather, _Weather, (Weather_Clear + Weather_Cloudy + Weather_Foggy + Weather_Light_Rain + Weather_Stormy)]] remoteExec ["systemChat", 0, true];
+
+["Edit_Track_Loading_Screen", false, GUI_Weather] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
+
 uiSleep 3;
 
 _Time = selectMax [Time_Early_Morning, Time_Noon, Time_Late_Afternoon, Time_Night, Time_Night_Full_Moon];
@@ -166,36 +172,41 @@ _Time = selectMax [Time_Early_Morning, Time_Noon, Time_Late_Afternoon, Time_Nigh
 switch (_Time) do {
 
 	case Time_Early_Morning: {
-		
-		"|Armakart Track Time| : Early Morning won the vote!" remoteExec ["systemChat", 0, true];
+
+		GUI_Time = 'Early Morning';
+
 		skipTime ((5.45 - daytime + 24) % 24);
 
 	};
 		
 	case Time_Noon: {
-		
-		"|Armakart Track Time| : Noon won the vote!" remoteExec ["systemChat", 0, true];
+
+		GUI_Time = 'Noon';
+
 		skipTime ((12 - daytime + 24) % 24);
 
 	};
 
 	case Time_Late_Afternoon: {
 
-		"|Armakart Track Time| : Late Afternoon won the vote!" remoteExec ["systemChat", 0, true];
+		GUI_Time = 'Late Afternoon';
+
 		skipTime ((19.15 - daytime + 24) % 24);
 		
 	};
 
 	case Time_Night: {
 
-		"|Armakart Track Time| : Night won the vote!" remoteExec ["systemChat", 0, true];
+		GUI_Time = 'Night';
+
 		[[2000, 7, 8, 24, 0]] remoteExec ["setDate"];
 		
 	};
 
 	case Time_Night_Full_Moon: {
 
-		"|Armakart Track Time| : Night (Full Moon) won the vote!" remoteExec ["systemChat", 0, true];
+		GUI_Time = 'Night Full Moon';
+
 		skipTime ((24 - daytime + 24) % 24);
 
 	};
@@ -210,13 +221,21 @@ diag_log format ["|Armakart FPS| : Current server FPS: %1.", diag_fps];
 diag_log format ["|Armakart FPS| : Current minimal server FPS: %1.", diag_fpsMin];
 diag_log "\\----------------------------------------------------------------------------//";
 
-uiSleep 2;
+[format ["|Armakart Voting System| : %1 won and got %2/%3 of the player votes!", GUI_Time, _Time, (Time_Early_Morning + Time_Noon + Time_Late_Afternoon + Time_Night + Time_Night_Full_Moon)]] remoteExec ["systemChat", 0, true];
+
+["Edit_Track_Loading_Screen", true, GUI_Weather, GUI_Time] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
 
 call NJP_Server_Fnc_Weather;
 
-"|Armakart System| : Track Weather & Time Initialization completed, beginning the race..." remoteExec ["systemChat", 0, true];
+diag_log "//----------------------------------------------------------------------------\\";
+diag_log "|Armakart Voting| : Applied weather effects to the server.";
+diag_log format ["|Armakart FPS| : Current server FPS: %1.", diag_fps];
+diag_log format ["|Armakart FPS| : Current minimal server FPS: %1.", diag_fpsMin];
+diag_log "\\----------------------------------------------------------------------------//";
 
-uiSleep 2;
+uiSleep 3;
+
+["Track_Loading_Layer", 0.001] remoteExec ["cutFadeOut", 0, true];
 
 ["dynamicBlur",  true] remoteExec ["ppEffectEnable", 0, false];
 ["dynamicBlur",  [4]] remoteExec ["ppEffectAdjust", 0, false];
@@ -225,10 +244,3 @@ uiSleep 2;
 ["dynamicBlur",  2] remoteExec ["ppEffectCommit", 0, false];
 
 ["Black_Screen_Layer", ["", "BLACK IN", 3]] remoteExec ["cutText", 0, true];
-[750, ["", "PLAIN"]] remoteExec ["cutText", 0, true];
-
-diag_log "//----------------------------------------------------------------------------\\";
-diag_log "|Armakart Voting| : Tallied weather votes & applied weather effects to the server.";
-diag_log format ["|Armakart FPS| : Current server FPS: %1.", diag_fps];
-diag_log format ["|Armakart FPS| : Current minimal server FPS: %1.", diag_fpsMin];
-diag_log "\\----------------------------------------------------------------------------//";

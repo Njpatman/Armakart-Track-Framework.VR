@@ -80,9 +80,6 @@ if (RACE_PHASE isEqualTo "Race_Started" && !(typeOf player isEqualTo "potato_spe
 
 	"Black_Screen_Layer" cutText ["", "BLACK IN", 3];
 
-	800 cutText ["", "PLAIN"];
-	750 cutText ["", "PLAIN"];
-
 	hint "Sadly, you've joined too late. Armakart doesn't allow JIPs past race start, enjoy watching the carnage in spectator!";
 
 	systemChat "|Armakart System| : JIP'd past race start, pushing into spectator...";
@@ -119,10 +116,7 @@ if (RACE_PHASE isEqualTo "Race_Stopped" && !(typeOf player isEqualTo "potato_spe
 
 	"Black_Screen_Layer" cutText ["", "BLACK IN", 3];
 
-	800 cutText ["", "PLAIN"];
-	750 cutText ["", "PLAIN"];
-
-		hint "Sadly, you've joined too late. The Race has ended";
+	hint "Sadly, you've joined too late. The Race has ended";
 
 	systemChat "|Armakart System| : JIP'd past race end, pushing into spectator...";
 
