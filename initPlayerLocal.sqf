@@ -18,6 +18,10 @@ if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || type
 	Yellow = [1,1,0,0.65];
 	Khaki = [0.741,0.718,0.42,0.65];
 
+	CP_NUM = count allMissionObjects "VR_3DSelector_01_complete_F";
+	SUB_CP_NUM = count allMissionObjects "Sign_Arrow_Large_Cyan_F";
+	PWR_BLK_NUM = count allMissionObjects "Land_VR_CoverObject_01_kneelHigh_F";
+
 	systemChat "|Armakart System| : Spectator Client initialization completed!";
 
 };
@@ -34,11 +38,10 @@ Next_Sub_CP_Num = 0;
 Loc_Array = [0, 0, 0, 0];
 Player_Finished = false;
 Current_Place = "N/A";
+Lightning_Particle_Effect = false;
 CP_NUM = count allMissionObjects "VR_3DSelector_01_complete_F";
 SUB_CP_NUM = count allMissionObjects "Sign_Arrow_Large_Cyan_F";
-Lightning_Particle_Effect = false;
-CP_Manual_Override = false;
-Sub_CP_Manual_Override = false;
+PWR_BLK_NUM = count allMissionObjects "Land_VR_CoverObject_01_kneelHigh_F";
 
 //Sets the color values for UI Color Toggle function
 Light_Blue = [0.133,0.349,0.522,0.65];
