@@ -59,7 +59,7 @@ diag_log format ["|Armakart FPS| : Current server FPS: %1.", diag_fps];
 diag_log format ["|Armakart FPS| : Current minimal server FPS: %1.", diag_fpsMin];
 diag_log "\\----------------------------------------------------------------------------//";
 
-uiSleep 1;
+uiSleep 1.65;
 
 _Weather = selectMax [Weather_Clear, Weather_Cloudy, Weather_Foggy, Weather_Light_Rain, Weather_Stormy];
 
@@ -165,7 +165,7 @@ switch (_Weather) do {
 
 ["Edit_Track_Loading_Screen", false, GUI_Weather] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
 
-uiSleep 3;
+uiSleep 3.25;
 
 _Time = selectMax [Time_Early_Morning, Time_Noon, Time_Late_Afternoon, Time_Night, Time_Night_Full_Moon];
 
@@ -233,7 +233,7 @@ diag_log format ["|Armakart FPS| : Current server FPS: %1.", diag_fps];
 diag_log format ["|Armakart FPS| : Current minimal server FPS: %1.", diag_fpsMin];
 diag_log "\\----------------------------------------------------------------------------//";
 
-uiSleep 3;
+uiSleep 4.25;
 
 ["Track_Loading_Layer", 0.001] remoteExec ["cutFadeOut", 0, true];
 

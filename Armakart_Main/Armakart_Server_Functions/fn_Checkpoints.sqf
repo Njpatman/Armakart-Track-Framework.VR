@@ -10,7 +10,7 @@
 
 	Loaded_CP_NUM = Loaded_CP_NUM + 1;
 
-	uiSleep 0.085;
+	uiSleep 0.0925;
 
 	if !((_CP_name in Manual_Checkpoint_Array) || (_CP_name isEqualTo "CP_1")) then {
 

@@ -53,7 +53,7 @@ if (!Player_Finished) then {
 
 uiSleep 3;
 
-systemChat "|Armakart System| : Players sill in race have been moved to spectator, calling Scoreboard...";
+systemChat "|Armakart System| : Players still in race have been moved to spectator, calling Scoreboard...";
 
 uiSleep 5;
 

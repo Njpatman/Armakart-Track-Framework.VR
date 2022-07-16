@@ -10,7 +10,7 @@
 
 	Loaded_SUB_CP_NUM = Loaded_SUB_CP_NUM + 1;
 
-	uiSleep 0.085;
+	uiSleep 0.0925;
 
 	if (!(_Sub_CP_name in Manual_Sub_Checkpoint_Array)) then {
 	

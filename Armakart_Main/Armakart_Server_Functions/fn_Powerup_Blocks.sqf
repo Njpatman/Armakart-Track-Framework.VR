@@ -11,7 +11,7 @@
 	_x setObjectTextureGlobal [1, "#(argb,8,8,3)color(0.73,0.57,0.27,0.1)"];
 
 	//Players seen to crash when attempting to load this all at once, putting this uiSleep in will hopefully spread out the love, causing less death to players PCs
-	uiSleep 0.115;
+	uiSleep 0.125;
 
 	//This Chunk of code attaches a VR square to the Powerup Block object, which basically disables the collision on the Powerup Blocks while players are on a vic
 	_Ting = createVehicle ["VR_Area_01_square_1x1_yellow_F", getPosASL _x, [], 0, "CAN_COLLIDE"];
