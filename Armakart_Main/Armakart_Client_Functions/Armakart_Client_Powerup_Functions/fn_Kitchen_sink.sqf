@@ -2,7 +2,7 @@
 	Author: Njpatman
 
 	Description:
-		Kitchen Sink powerup, simply launches 2 invisble GBUs with a kitchen sink ontop
+		Kitchen Sink powerup, simply launches 2 invisible GBUs with a kitchen sink on top
 */
 
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"

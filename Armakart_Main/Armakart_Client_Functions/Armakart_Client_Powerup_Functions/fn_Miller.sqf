@@ -23,7 +23,7 @@ Initial_hint = true;
 			_smoke_1 attachTo [_Miller, [0,0,0]];
 
 			_Miller_Look_Obj = "Sign_Sphere10cm_F" createvehicle position Powerup_Spawn;
-			_Miller_Look_Obj attachTo [vehicle player, [0,55,0.1]];
+			_Miller_Look_Obj attachTo [vehicle player, [0, 25,0.1]];
 			[_Miller_Look_Obj, true] remoteExec ["hideObjectGlobal",0,true];
 
 			_bomb attachTo [vehicle player, [1,1,0]];
@@ -33,7 +33,7 @@ Initial_hint = true;
 			[_Miller, "TransAnimBase"] remoteExec ["switchMove",0,true];
 
 			uiSleep 2;
-			_Search_Array = nearestObjects [getPos _Miller_Look_Obj, ["Car", "Truck"], 50];
+			_Search_Array = nearestObjects [getPos _Miller_Look_Obj, ["Car", "Truck"], 20];
 			_kart = _Search_Array select 0;
 			uiSleep 0.1;
 			No_item = true;
@@ -95,7 +95,7 @@ Initial_hint = true;
 			_smoke_1 attachTo [_Miller, [0,0,0]];
 
 			_Miller_Look_Obj = "Sign_Sphere10cm_F" createvehicle position Powerup_Spawn;
-			_Miller_Look_Obj attachTo [vehicle player, [0,55,0.1]];
+			_Miller_Look_Obj attachTo [vehicle player, [0,25,0.1]];
 			[_Miller_Look_Obj, true] remoteExec ["hideObjectGlobal",0,true];
 
 			_bomb attachTo [vehicle player, [1,1,0]];
@@ -105,7 +105,7 @@ Initial_hint = true;
 			[_Miller, "TransAnimBase"] remoteExec ["switchMove",0,true];
 
 			uiSleep 2;
-			_Search_Array = nearestObjects [getPos _Miller_Look_Obj, ["Car", "Truck"], 50];
+			_Search_Array = nearestObjects [getPos _Miller_Look_Obj, ["Car", "Truck"], 20];
 			_kart = _Search_Array select 0;
 			uiSleep 0.1;
 			No_item = true;
@@ -167,7 +167,7 @@ Initial_hint = true;
 			_smoke_1 attachTo [_Miller, [0,0,0]];
 
 			_Miller_Look_Obj = "Sign_Sphere10cm_F" createvehicle position Powerup_Spawn;
-			_Miller_Look_Obj attachTo [vehicle player, [0,55,0.1]];
+			_Miller_Look_Obj attachTo [vehicle player, [0,-25,0.1]];
 			[_Miller_Look_Obj, true] remoteExec ["hideObjectGlobal",0,true];
 
 			_bomb attachTo [vehicle player, [1,1,0]];
@@ -177,7 +177,7 @@ Initial_hint = true;
 			[_Miller, "TransAnimBase"] remoteExec ["switchMove",0,true];
 
 			uiSleep 2;
-			_Search_Array = nearestObjects [getPos _Miller_Look_Obj, ["Car", "Truck"], 50];
+			_Search_Array = nearestObjects [getPos _Miller_Look_Obj, ["Car", "Truck"], 20];
 			_kart = _Search_Array select 0;
 			uiSleep 0.1;
 			No_item = true;
@@ -191,8 +191,8 @@ Initial_hint = true;
 				playsound"toss";
 				detach _bomb;
 				_vehicle setVelocity [
-					(_vel select 0) + (sin _dir * _speed), 
-					(_vel select 1) + (cos _dir * _speed), 
+					(_vel select 0) + (sin (_dir - 180) * _speed), 
+					(_vel select 1) + (cos (_dir - 180) * _speed), 
 					(_vel select 2)
 				];
 			} else {
@@ -239,7 +239,7 @@ Initial_hint = true;
 			_smoke_1 attachTo [_Miller, [0,0,0]];
 
 			_Miller_Look_Obj = "Sign_Sphere10cm_F" createvehicle position Powerup_Spawn;
-			_Miller_Look_Obj attachTo [vehicle player, [0,55,0.1]];
+			_Miller_Look_Obj attachTo [vehicle player, [0,-25,0.1]];
 			[_Miller_Look_Obj, true] remoteExec ["hideObjectGlobal",0,true];
 
 			_bomb attachTo [vehicle player, [1,1,0]];
@@ -249,7 +249,7 @@ Initial_hint = true;
 			[_Miller, "TransAnimBase"] remoteExec ["switchMove",0,true];
 
 			uiSleep 2;
-			_Search_Array = nearestObjects [getPos _Miller_Look_Obj, ["Car", "Truck"], 50];
+			_Search_Array = nearestObjects [getPos _Miller_Look_Obj, ["Car", "Truck"], 20];
 			_kart = _Search_Array select 0;
 			uiSleep 0.1;
 			No_item = true;
@@ -263,8 +263,8 @@ Initial_hint = true;
 				playsound"toss";
 				detach _bomb;
 				_vehicle setVelocity [
-					(_vel select 0) + (sin _dir * _speed), 
-					(_vel select 1) + (cos _dir * _speed), 
+					(_vel select 0) + (sin (_dir - 180) * _speed), 
+					(_vel select 1) + (cos (_dir - 180) * _speed), 
 					(_vel select 2)
 				];
 			} else {

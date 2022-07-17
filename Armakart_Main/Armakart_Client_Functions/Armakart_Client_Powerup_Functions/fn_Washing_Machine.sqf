@@ -47,7 +47,7 @@ Initial_hint = true;
 
 			uiSleep 4;
 
-			while {_i < 4} do {
+			while {_i <= 4} do {
 
 				_i = _i + 1;
 
@@ -118,7 +118,7 @@ Initial_hint = true;
 
 			uiSleep 4;
 
-			while {_i < 4} do {
+			while {_i <= 4} do {
 
 				_i = _i + 1;
 
@@ -177,8 +177,8 @@ Initial_hint = true;
 			detach _bomb;
 			_dir = direction _vehicle;
 			_vehicle setVelocity [
-				(_vel select 0) + (sin _dir * _speed), 
-				(_vel select 1) + (cos _dir * _speed),
+				(_vel select 0) + (sin (_dir - 180) * _speed), 
+				(_vel select 1) + (cos (_dir - 180) * _speed),
 				(_vel select 2)
 			];
 
@@ -189,7 +189,7 @@ Initial_hint = true;
 
 			uiSleep 4;
 
-			while {_i < 4} do {
+			while {_i <= 4} do {
 
 				_i = _i + 1;
 
@@ -247,8 +247,8 @@ Initial_hint = true;
 			detach _bomb;
 			_dir = direction _vehicle;
 			_vehicle setVelocity [
-				(_vel select 0) + (sin _dir * _speed), 
-				(_vel select 1) + (cos _dir * _speed),
+				(_vel select 0) + (sin (_dir - 180) * _speed), 
+				(_vel select 1) + (cos (_dir - 180) * _speed),
 				(_vel select 2)
 			];
 
@@ -259,7 +259,7 @@ Initial_hint = true;
 
 			uiSleep 4;
 
-			while {_i < 4} do {
+			while {_i <= 4} do {
 
 				_i = _i + 1;
 
