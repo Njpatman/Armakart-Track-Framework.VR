@@ -3,18 +3,15 @@
 * - Handles the updating for players live in-race UI.
 * 
 */ 
-if !(hasInterface) exitWith {};
 
 // Exit if spectator
-if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) exitWith {  // Check if player, even a host
-	systemChat "|Armakart System| : Detected that player is a spectator, skipping Live_Place.sqf";
-};
+if (!hasInterface || (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) exitWith {};
 
 #define _Personal_UI_Places uiNamespace getVariable ["Place_UI", controlNull]
 #define _Personal_UI_CPs uiNamespace getVariable ["Personal_UI_CPs", controlNull]
 #define _Personal_UI_Laps uiNamespace getVariable ["Personal_UI_Laps", controlNull]
 
-While {side player isEqualTo west} do 
+While {!Player_Finished} do 
 {
 
 	if (player in (fullCrew [vehicle player, "driver", false] select 0)) then 
@@ -55,7 +52,7 @@ While {side player isEqualTo west} do
 
 	};
 
-	if (Current_Place isEqualTo "N/A") then {
+	if ((Current_Place isEqualTo "N/A")) then {
 
 		_Personal_UI_Places ctrlSetStructuredText parseText "<t color = '#FF0000' font='PuristaSemibold' align = 'center' valign = 'bottom' shadow='0' size='1.85'>N/A</t>";
 		
@@ -89,9 +86,3 @@ While {side player isEqualTo west} do
 	_Personal_UI_Laps ctrlSetStructuredText parseText format ["<t font='LCD14' align = 'center' valign = 'bottom' shadow='0' size='1.78'>%1/%2</t>", Current_Laps, Laps_number];
 				
 };
-
-if (Current_Place isEqualTo "N/A") exitwith {};
-
-[Loc_Array] remoteExec ["NJP_Client_Fnc_Delete_From_Places_Live_Array", 0, true];
-
-[[999, 999, 999, player]] remoteExec ["NJP_Client_Fnc_Add_To_Places_Live_Array", 0, true];

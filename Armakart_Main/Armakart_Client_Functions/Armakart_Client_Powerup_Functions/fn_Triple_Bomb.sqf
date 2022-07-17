@@ -139,7 +139,7 @@ Initial_hint = true;
 #define _Crosshair_2 uiNamespace getVariable [ "Crosshair_2", controlNull ]
 
 //Gets the color value to the Crosshair
-_UI_Color = profileNamespace getVariable "_UI_Color";
+_UI_Color = profileNamespace getVariable "UI_Color";
 
 //Apllies the color value to the Crosshair
 {

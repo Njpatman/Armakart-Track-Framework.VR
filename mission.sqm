@@ -8,7 +8,7 @@ class EditorData
 	toggles=518;
 	class ItemIDProvider
 	{
-		nextID=15350;
+		nextID=15569;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=918;
+		nextID=942;
 	};
 	class Camera
 	{
-		pos[]={95.164406,81.041885,-29.452093};
-		dir[]={0.046632152,-0.41995651,0.90638518};
-		up[]={0.021589521,0.90742731,0.41965038};
-		aside[]={0.99871558,-2.3364737e-007,-0.051382285};
+		pos[]={114.13844,59.730362,2.1024938};
+		dir[]={0.010428953,-0.43706748,0.89939761};
+		up[]={0.0050660232,0.89940459,0.43707243};
+		aside[]={0.99995875,1.6550639e-006,-0.011591185};
 	};
 };
 binarizationWanted=0;
@@ -39025,8 +39025,8 @@ class Mission
 								class Item0
 								{
 									dataType="Trigger";
-									position[]={111.97796,5.1100001,176.0545};
-									angle=1.5710765;
+									position[]={111.978,5.1100001,176.05499};
+									angle=1.5710756;
 									class Attributes
 									{
 										condition="call{this && (vehicle player in thislist)}";
@@ -39037,7 +39037,7 @@ class Mission
 										repeatable=1;
 										activationBy="ANYPLAYER";
 										isRectangle=1;
-										triggerInterval=0.31999999;
+										triggerInterval=0.34999999;
 									};
 									id=12699;
 									type="EmptyDetectorArea10x10";
@@ -40975,7 +40975,7 @@ class Mission
 						};
 					};
 					id=14311;
-					atlOffset=1.5128279;
+					atlOffset=1.5128469;
 				};
 				class Item21
 				{
@@ -41393,7 +41393,7 @@ class Mission
 						};
 					};
 					id=14312;
-					atlOffset=2.7400827;
+					atlOffset=0.0053520203;
 				};
 				class Item23
 				{
@@ -41408,7 +41408,7 @@ class Mission
 				};
 			};
 			id=14310;
-			atlOffset=0.86969662;
+			atlOffset=0.18601513;
 		};
 		class Item44
 		{

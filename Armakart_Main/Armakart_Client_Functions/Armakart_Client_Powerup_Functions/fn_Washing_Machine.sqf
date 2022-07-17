@@ -23,8 +23,8 @@ Initial_hint = true;
 
 			_bomb attachTo [vehicle player, [1,1,0.1]];
 			_WM attachTo [_bomb, [0,0.5,0]];
-			[_bomb, true] remoteExec ["hideObjectGlobal",2,true];
 			_bomb setVectorDirAndUp [[0,0,0],[-100,-100,-100]];
+			[_bomb, true] remoteExec ["hideObjectGlobal",0,true];
 
 			uiSleep 1.5;
 
@@ -94,8 +94,8 @@ Initial_hint = true;
 
 			_bomb attachTo [vehicle player, [1,1,0.1]];
 			_WM attachTo [_bomb, [0,0.5,0]];
-			[_bomb, true] remoteExec ["hideObjectGlobal",2,true];
 			_bomb setVectorDirAndUp [[0,0,0],[-100,-100,-100]];
+			[_bomb, true] remoteExec ["hideObjectGlobal",0,true];
 
 			uiSleep 1.5;
 
@@ -118,7 +118,7 @@ Initial_hint = true;
 
 			uiSleep 4;
 
-			while {_i <= 4} do {
+			while {_i < 4} do {
 
 				_i = _i + 1;
 
@@ -165,8 +165,8 @@ Initial_hint = true;
 
 			_bomb attachTo [vehicle player, [1,1,0.1]];
 			_WM attachTo [_bomb, [0,0.5,0]];
-			[_bomb, true] remoteExec ["hideObjectGlobal",2,true];
 			_bomb setVectorDirAndUp [[0,0,0],[-100,-100,-100]];
+			[_bomb, true] remoteExec ["hideObjectGlobal",0,true];
 
 			uiSleep 1.5;
 
@@ -177,8 +177,8 @@ Initial_hint = true;
 			detach _bomb;
 			_dir = direction _vehicle;
 			_vehicle setVelocity [
-				(_vel select 0) + (sin (_dir - 180) * _speed), 
-				(_vel select 1) + (cos (_dir - 180) * _speed),
+				(_vel select 0) + (sin _dir * _speed), 
+				(_vel select 1) + (cos _dir * _speed),
 				(_vel select 2)
 			];
 
@@ -189,7 +189,7 @@ Initial_hint = true;
 
 			uiSleep 4;
 
-			while {_i <= 4} do {
+			while {_i < 4} do {
 
 				_i = _i + 1;
 
@@ -235,8 +235,8 @@ Initial_hint = true;
 
 			_bomb attachTo [vehicle player, [1,1,0.1]];
 			_WM attachTo [_bomb, [0,0.5,0]];
-			[_bomb, true] remoteExec ["hideObjectGlobal",2,true];
 			_bomb setVectorDirAndUp [[0,0,0],[-100,-100,-100]];
+			[_bomb, true] remoteExec ["hideObjectGlobal",0,true];
 
 			uiSleep 1.5;
 
@@ -247,8 +247,8 @@ Initial_hint = true;
 			detach _bomb;
 			_dir = direction _vehicle;
 			_vehicle setVelocity [
-				(_vel select 0) + (sin (_dir - 180) * _speed), 
-				(_vel select 1) + (cos (_dir - 180) * _speed),
+				(_vel select 0) + (sin _dir * _speed), 
+				(_vel select 1) + (cos _dir * _speed),
 				(_vel select 2)
 			];
 
@@ -259,7 +259,7 @@ Initial_hint = true;
 
 			uiSleep 4;
 
-			while {_i <= 4} do {
+			while {_i < 4} do {
 
 				_i = _i + 1;
 

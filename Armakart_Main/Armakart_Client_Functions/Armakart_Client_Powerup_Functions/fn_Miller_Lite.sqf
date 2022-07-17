@@ -18,7 +18,7 @@ Initial_hint = true;
 			_bomb = "ammo_Bomb_SDB" createvehicle position Powerup_Spawn;
 			_Miller_Lite = _Miller_group createUnit ["B_CTRG_Miller_F", position Powerup_Spawn, [], 0, "FORM"];
 			[_Miller_Lite, "TransAnimBase"] remoteExec ["switchMove",0,true];
-			[_Miller_Lite, false] remoteExec ["enableSimulationGlobal",2,true];
+			[_Miller_Lite, false] remoteExec ["enableSimulationGlobal",0,true];
 
 			_spark = "#particlesource" createVehicle (getPosASL _Miller_Lite);
 
@@ -29,7 +29,7 @@ Initial_hint = true;
 
 			_Miller_Lite_Look_Obj = "Sign_Sphere10cm_F" createvehicle position Powerup_Spawn;
 			_Miller_Lite_Look_Obj attachTo [vehicle player, [0,55,0.1]];
-			[_Miller_Lite_Look_Obj, true] remoteExec ["hideObjectGlobal",2,true];
+			[_Miller_Lite_Look_Obj, true] remoteExec ["hideObjectGlobal",0,true];
 
 			_bomb attachTo [vehicle player, [1,1,0]];
 			_Miller_Lite attachTo [_bomb, [0,0,0]];
@@ -182,7 +182,7 @@ Initial_hint = true;
 			_bomb = "ammo_Bomb_SDB" createvehicle position Powerup_Spawn;
 			_Miller_Lite = _Miller_group createUnit ["B_CTRG_Miller_F", position Powerup_Spawn, [], 0, "FORM"];
 			[_Miller_Lite, "TransAnimBase"] remoteExec ["switchMove",0,true];
-			[_Miller_Lite, false] remoteExec ["enableSimulationGlobal",2,true];
+			[_Miller_Lite, false] remoteExec ["enableSimulationGlobal",0,true];
 
 			_spark = "#particlesource" createVehicle (getPosASL _Miller_Lite);
 
@@ -193,7 +193,7 @@ Initial_hint = true;
 
 			_Miller_Lite_Look_Obj = "Sign_Sphere10cm_F" createvehicle position Powerup_Spawn;
 			_Miller_Lite_Look_Obj attachTo [vehicle player, [0,55,0.1]];
-			[_Miller_Lite_Look_Obj, true] remoteExec ["hideObjectGlobal",2,true];
+			[_Miller_Lite_Look_Obj, true] remoteExec ["hideObjectGlobal",0,true];
 
 			_bomb attachTo [vehicle player, [1,1,0]];
 			_Miller_Lite attachTo [_bomb, [0,0,0]];

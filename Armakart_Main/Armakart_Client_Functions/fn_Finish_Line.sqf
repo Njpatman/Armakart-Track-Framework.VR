@@ -22,6 +22,14 @@ if (Current_Laps + 1 > Laps_number && Current_Checkpoint isEqualTo CP_NUM) exitW
 
 	_FINISHED_KART_NUM = KARTS_FINISHED + 1;
 
+	if (player in (fullCrew [vehicle player, "driver", false] select 0)) then {
+
+		[Loc_Array] remoteExec ["NJP_Client_Fnc_Delete_From_Places_Live_Array", 0, true];
+
+		[[999, 999, 999, 999, player, _FINISHED_KART_NUM]] remoteExec ["NJP_Client_Fnc_Add_To_Places_Live_Array", 0, true];
+
+	};
+
 	_FINISHED_KART_NUM_STR = [_FINISHED_KART_NUM] call BIS_fnc_ordinalNumber;
 
 	["Armakart", "MyKeyButShift-er", "Powerup Action", {""}, {""}, [DIK_F, [true, false, false]], false, 0, true] call CBA_fnc_addKeybind;

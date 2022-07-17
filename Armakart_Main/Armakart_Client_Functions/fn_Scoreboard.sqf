@@ -70,7 +70,7 @@ createDialog "Scoreboard_UI";
 _UI_Color = [0.133,0.349,0.522,0.65];
 
 //Get the UI color that was used on the Customization UI and applies it
-_UI_Color = profileNamespace getVariable "_UI_Color";
+_UI_Color = profileNamespace getVariable "UI_Color";
 _Scoreboard_UI ctrlSetBackgroundColor _UI_Color;
 
 //Get's the places array and applies them in order to the Places Screen

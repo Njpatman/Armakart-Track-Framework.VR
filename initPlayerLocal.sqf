@@ -4,23 +4,6 @@ if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || type
 	Player_Finished = true;
 	UI_Color = [0.133,0.349,0.522,0.65];
 	UI_Color_int = [0,11] call BIS_fnc_randomInt;
-	//Sets the color values for UI Color Toggle function
-	Light_Blue = [0.133,0.349,0.522,0.65];
-	Light_Green = [0.114,0.639,0.255,0.65];
-	Light_Red = [0.749,0.141,0.129,0.65];
-	Light_Orange = [0.961,0.404,0.106,0.65];
-	Dark_Blue = [0,0.051,1,0.65];
-	Purple = [0.584,0,1,0.65];
-	Pink = [1,0.02,0.855,0.65];
-	Blue_violet = [0.451,0.4,0.741,0.65];
-	Bronze = [0.69,0.549,0.341,0.65];
-	Rose_Gold = [0.718,0.431,0.475,0.65];
-	Yellow = [1,1,0,0.65];
-	Khaki = [0.741,0.718,0.42,0.65];
-
-	CP_NUM = count allMissionObjects "VR_3DSelector_01_complete_F";
-	SUB_CP_NUM = count allMissionObjects "Sign_Arrow_Large_Cyan_F";
-	PWR_BLK_NUM = count allMissionObjects "Land_VR_CoverObject_01_kneelHigh_F";
 
 	systemChat "|Armakart System| : Spectator Client initialization completed!";
 
@@ -39,23 +22,6 @@ Loc_Array = [0, 0, 0, 0];
 Player_Finished = false;
 Current_Place = "N/A";
 Lightning_Particle_Effect = false;
-CP_NUM = count allMissionObjects "VR_3DSelector_01_complete_F";
-SUB_CP_NUM = count allMissionObjects "Sign_Arrow_Large_Cyan_F";
-PWR_BLK_NUM = count allMissionObjects "Land_VR_CoverObject_01_kneelHigh_F";
-
-//Sets the color values for UI Color Toggle function
-Light_Blue = [0.133,0.349,0.522,0.65];
-Light_Green = [0.114,0.639,0.255,0.65];
-Light_Red = [0.749,0.141,0.129,0.65];
-Light_Orange = [0.961,0.404,0.106,0.65];
-Dark_Blue = [0,0.051,1,0.65];
-Purple = [0.584,0,1,0.65];
-Pink = [1,0.02,0.855,0.65];
-Blue_violet = [0.451,0.4,0.741,0.65];
-Bronze = [0.69,0.549,0.341,0.65];
-Rose_Gold = [0.718,0.431,0.475,0.65];
-Yellow = [1,1,0,0.65];
-Khaki = [0.741,0.718,0.42,0.65];
 
 uiNamespace setVariable ["NJP_Block_Keys", 0];
 uiNamespace setVariable ["NJP_Block_Keys_EH", nil];

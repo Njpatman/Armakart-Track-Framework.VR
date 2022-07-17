@@ -21,8 +21,6 @@ switch (_GUI_Edit) do {
 
 		// Exit if spectator
 		if ((typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) exitWith {
-			
-			systemChat "|Armakart System| : Detected that player is a spectator, skipping NJP_Client_Fnc_GUI_Edit";
 
 			_Pre_Race_UI_Bottom ctrlSetStructuredText parseText "<br/> <t align = 'center' size='1'> </t>";
 

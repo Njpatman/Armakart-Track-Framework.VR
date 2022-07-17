@@ -4,7 +4,11 @@
 	Description:
 		A template for all the ambitious people who want to insert their own custom powerups into their track
 
-	Note: I'm straight up not going to hold your hand, simply edit Armakart_Powerup_master.sqf
+	Note: I'm straight up not going to hold your hand, here are the other two files you need to modify, it's pretty damn self explanatory of what you need to do :
+
+	* Armakart_Main\Armakart_Scripts\Armakart_Scripts_Powerups\Armakart_Powerup_Master.sqf
+
+	* Armakart_Main\Armakart_Scripts\Client_Fnc_Library.sqf
 
 	if you want an alternate keybinding setup (ie: F is for launching forward and R is for launching behind) I'd recommend looking at Washing_Machine.sqf.
 

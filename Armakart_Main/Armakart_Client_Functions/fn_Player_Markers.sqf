@@ -30,6 +30,7 @@ Installation:
 	Follow instructions posted in the below link
 		
 		http://forums.bistudio.com/showthread.php?184108-Soldier-Tracker-(-Map-and-GPS-Icons-)
+		
 _________________________________________________________________/*/
 
 if (isDedicated || !hasInterface) exitWith {};

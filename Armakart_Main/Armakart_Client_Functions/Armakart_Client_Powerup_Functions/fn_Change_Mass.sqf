@@ -149,12 +149,9 @@ Initial_hint = true;
 #define _Crosshair_1 uiNamespace getVariable [ "Crosshair_1", controlNull ]
 #define _Crosshair_2 uiNamespace getVariable [ "Crosshair_2", controlNull ]
 
-//Gets the color value to the Crosshair
-_UI_Color = profileNamespace getVariable "_UI_Color";
-
 //Apllies the color value to the Crosshair
 {
-_x ctrlSetBackgroundColor _UI_Color;
+_x ctrlSetBackgroundColor UI_Color;
 } forEach [_Crosshair_1, _Crosshair_2];
 
 playsound"hint";

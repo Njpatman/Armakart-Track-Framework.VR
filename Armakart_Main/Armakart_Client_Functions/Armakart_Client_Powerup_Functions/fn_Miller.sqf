@@ -16,7 +16,7 @@ Initial_hint = true;
 
 			_group = createGroup CIVILIAN;
 			_bomb = "Bomb_03_F" createvehicle position Powerup_Spawn;
-			[_bomb, true] remoteExec ["hideObjectGlobal",2,true];
+			[_bomb, true] remoteExec ["hideObjectGlobal",0,true];
 			_Miller = _group createUnit ["B_CTRG_Miller_F", position Powerup_Spawn, [], 0, "FORM"];
 
 			_smoke_1 = "SmokeShellGreen" createVehicle position Powerup_Spawn;
@@ -24,13 +24,13 @@ Initial_hint = true;
 
 			_Miller_Look_Obj = "Sign_Sphere10cm_F" createvehicle position Powerup_Spawn;
 			_Miller_Look_Obj attachTo [vehicle player, [0,55,0.1]];
-			[_Miller_Look_Obj, true] remoteExec ["hideObjectGlobal",2,true];
+			[_Miller_Look_Obj, true] remoteExec ["hideObjectGlobal",0,true];
 
-			[_Miller, "TransAnimBase"] remoteExec ["switchMove",2,true];
 			_bomb attachTo [vehicle player, [1,1,0]];
 			_Miller attachTo [_bomb, [0,-0.5,0]];
 			_bomb setVectorDirAndUp [[0,0,0],[-100,-100,-100]];
 			_Dir = getdir vehicle player;
+			[_Miller, "TransAnimBase"] remoteExec ["switchMove",0,true];
 
 			uiSleep 2;
 			_Search_Array = nearestObjects [getPos _Miller_Look_Obj, ["Car", "Truck"], 50];
@@ -68,6 +68,7 @@ Initial_hint = true;
 			[1] remoteExec ["BIS_fnc_earthquake",0,true];
 			deleteVehicle _Miller;
 			deleteVehicle _Miller_Look_Obj;
+			deleteVehicle _smoke_1;
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 	};
@@ -87,7 +88,7 @@ Initial_hint = true;
 
 			_group = createGroup CIVILIAN;
 			_bomb = "Bomb_03_F" createvehicle position Powerup_Spawn;
-			[_bomb, true] remoteExec ["hideObjectGlobal",2,true];
+			[_bomb, true] remoteExec ["hideObjectGlobal",0,true];
 			_Miller = _group createUnit ["B_CTRG_Miller_F", position Powerup_Spawn, [], 0, "FORM"];
 
 			_smoke_1 = "SmokeShellGreen" createVehicle position Powerup_Spawn;
@@ -95,13 +96,13 @@ Initial_hint = true;
 
 			_Miller_Look_Obj = "Sign_Sphere10cm_F" createvehicle position Powerup_Spawn;
 			_Miller_Look_Obj attachTo [vehicle player, [0,55,0.1]];
-			[_Miller_Look_Obj, true] remoteExec ["hideObjectGlobal",2,true];
+			[_Miller_Look_Obj, true] remoteExec ["hideObjectGlobal",0,true];
 
-			[_Miller, "TransAnimBase"] remoteExec ["switchMove",2,true];
 			_bomb attachTo [vehicle player, [1,1,0]];
 			_Miller attachTo [_bomb, [0,-0.5,0]];
 			_bomb setVectorDirAndUp [[0,0,0],[-100,-100,-100]];
 			_Dir = getdir vehicle player;
+			[_Miller, "TransAnimBase"] remoteExec ["switchMove",0,true];
 
 			uiSleep 2;
 			_Search_Array = nearestObjects [getPos _Miller_Look_Obj, ["Car", "Truck"], 50];
@@ -159,21 +160,21 @@ Initial_hint = true;
 
 			_group = createGroup CIVILIAN;
 			_bomb = "Bomb_03_F" createvehicle position Powerup_Spawn;
-			[_bomb, true] remoteExec ["hideObjectGlobal",2,true];
+			[_bomb, true] remoteExec ["hideObjectGlobal",0,true];
 			_Miller = _group createUnit ["B_CTRG_Miller_F", position Powerup_Spawn, [], 0, "FORM"];
 
 			_smoke_1 = "SmokeShellGreen" createVehicle position Powerup_Spawn;
 			_smoke_1 attachTo [_Miller, [0,0,0]];
 
 			_Miller_Look_Obj = "Sign_Sphere10cm_F" createvehicle position Powerup_Spawn;
-			_Miller_Look_Obj attachTo [vehicle player, [0,-55,0.1]];
-			[_Miller_Look_Obj, true] remoteExec ["hideObjectGlobal",2,true];
+			_Miller_Look_Obj attachTo [vehicle player, [0,55,0.1]];
+			[_Miller_Look_Obj, true] remoteExec ["hideObjectGlobal",0,true];
 
-			[_Miller, "TransAnimBase"] remoteExec ["switchMove",2,true];
 			_bomb attachTo [vehicle player, [1,1,0]];
 			_Miller attachTo [_bomb, [0,-0.5,0]];
 			_bomb setVectorDirAndUp [[0,0,0],[-100,-100,-100]];
 			_Dir = getdir vehicle player;
+			[_Miller, "TransAnimBase"] remoteExec ["switchMove",0,true];
 
 			uiSleep 2;
 			_Search_Array = nearestObjects [getPos _Miller_Look_Obj, ["Car", "Truck"], 50];
@@ -190,8 +191,8 @@ Initial_hint = true;
 				playsound"toss";
 				detach _bomb;
 				_vehicle setVelocity [
-					(_vel select 0) + (sin (_dir - 180) * _speed), 
-					(_vel select 1) + (cos (_dir - 180) * _speed), 
+					(_vel select 0) + (sin _dir * _speed), 
+					(_vel select 1) + (cos _dir * _speed), 
 					(_vel select 2)
 				];
 			} else {
@@ -231,21 +232,21 @@ Initial_hint = true;
 
 			_group = createGroup CIVILIAN;
 			_bomb = "Bomb_03_F" createvehicle position Powerup_Spawn;
-			[_bomb, true] remoteExec ["hideObjectGlobal",2,true];
+			[_bomb, true] remoteExec ["hideObjectGlobal",0,true];
 			_Miller = _group createUnit ["B_CTRG_Miller_F", position Powerup_Spawn, [], 0, "FORM"];
 
 			_smoke_1 = "SmokeShellGreen" createVehicle position Powerup_Spawn;
 			_smoke_1 attachTo [_Miller, [0,0,0]];
 
 			_Miller_Look_Obj = "Sign_Sphere10cm_F" createvehicle position Powerup_Spawn;
-			_Miller_Look_Obj attachTo [vehicle player, [0,-55,0.1]];
-			[_Miller_Look_Obj, true] remoteExec ["hideObjectGlobal",2,true];
+			_Miller_Look_Obj attachTo [vehicle player, [0,55,0.1]];
+			[_Miller_Look_Obj, true] remoteExec ["hideObjectGlobal",0,true];
 
-			[_Miller, "TransAnimBase"] remoteExec ["switchMove",2,true];
 			_bomb attachTo [vehicle player, [1,1,0]];
 			_Miller attachTo [_bomb, [0,-0.5,0]];
 			_bomb setVectorDirAndUp [[0,0,0],[-100,-100,-100]];
 			_Dir = getdir vehicle player;
+			[_Miller, "TransAnimBase"] remoteExec ["switchMove",0,true];
 
 			uiSleep 2;
 			_Search_Array = nearestObjects [getPos _Miller_Look_Obj, ["Car", "Truck"], 50];
@@ -262,8 +263,8 @@ Initial_hint = true;
 				playsound"toss";
 				detach _bomb;
 				_vehicle setVelocity [
-					(_vel select 0) + (sin (_dir - 180) * _speed), 
-					(_vel select 1) + (cos (_dir - 180) * _speed), 
+					(_vel select 0) + (sin _dir * _speed), 
+					(_vel select 1) + (cos _dir * _speed), 
 					(_vel select 2)
 				];
 			} else {

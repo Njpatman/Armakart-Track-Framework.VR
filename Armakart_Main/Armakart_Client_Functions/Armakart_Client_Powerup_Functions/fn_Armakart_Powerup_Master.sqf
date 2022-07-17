@@ -54,6 +54,8 @@ Itembox_sfx = false;
 uiSleep 0.125;
 hintSilent "";
 
+if (Player_Finished) exitWith {};
+
 if (Powerup_Creep_Enabled isEqualTo 2) exitwith 
 {
 

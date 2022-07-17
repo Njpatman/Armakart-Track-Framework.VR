@@ -17,18 +17,16 @@ Initial_hint = true;
 			Places_Live sort false;
 			_First_Boi_local_array_num = Places_Live findIf {(_x select 5) isEqualTo 1};
 			_First_Boi_local_array = Places_Live select _First_Boi_local_array_num;
-			_Is_First_Boi_Fin = _First_Boi_local_array select 0;
+			_First_Boi = _First_Boi_local_array select 4;
+			_First_Boi_Vic = vehicle _First_Boi;
 
-			if (_Is_First_Boi_Fin isEqualTo 999) exitWith {
+			if (isNil "_First_Boi_Vic" || (_First_Boi_local_array select 0) isEqualTo 999) exitWith {
 
-				hint parseText "<t>Blue Shell Status:  </t><t color='#ff0000'>Person in first place has already finished, as such Blue Shell is unable to lock what doesn't exist.</t>";
+				hint parseText "<t>Blue Shell Status:  </t><t color='#ff0000'>First place has already finished, as such Blue Shell is unable to lock what doesn't exist.</t>";
 
 				No_item = true;
 				
 			};
-
-			_First_Boi = _First_Boi_local_array select 4;
-			_First_Boi_Vic = vehicle _First_Boi;
 
 			_First_Boi_Vic_Check_Obj = lineIntersectsSurfaces 
 			[
@@ -77,7 +75,7 @@ Initial_hint = true;
 			_First_Boi_Vic_pos_x = _First_Boi_Vic_Check_Obj_Intersect select 0;
 			_First_Boi_Vic_pos_y = _First_Boi_Vic_Check_Obj_Intersect select 1;
 			_First_Boi_Vic_pos_z = _First_Boi_Vic_Check_Obj_Intersect select 2;
-			_First_Boi_Vic_pos_z = _First_Boi_Vic_pos_z - 8.5;
+			_First_Boi_Vic_pos_z = _First_Boi_Vic_pos_z - 6.5;
 
 			_Speed = 65;		
 
@@ -116,18 +114,16 @@ Initial_hint = true;
 			Places_Live sort false;
 			_First_Boi_local_array_num = Places_Live findIf {(_x select 5) isEqualTo 1};
 			_First_Boi_local_array = Places_Live select _First_Boi_local_array_num;
-			_Is_First_Boi_Fin = _First_Boi_local_array select 0;
+			_First_Boi = _First_Boi_local_array select 4;
+			_First_Boi_Vic = vehicle _First_Boi;
 
-			if (_Is_First_Boi_Fin isEqualTo 999) exitWith {
+			if (isNil "_First_Boi_Vic" || (_First_Boi_local_array select 0) isEqualTo 999) exitWith {
 
-				hint parseText "<t>Blue Shell Status:  </t><t color='#ff0000'>Person in first place has already finished, as such Blue Shell is unable to lock what doesn't exist.</t>";
+				hint parseText "<t>Blue Shell Status:  </t><t color='#ff0000'>First place has already finished, as such Blue Shell is unable to lock what doesn't exist.</t>";
 
 				No_item = true;
 				
 			};
-
-			_First_Boi = _First_Boi_local_array select 4;
-			_First_Boi_Vic = vehicle _First_Boi;
 
 			_First_Boi_Vic_Check_Obj = lineIntersectsSurfaces 
 			[
@@ -176,7 +172,7 @@ Initial_hint = true;
 			_First_Boi_Vic_pos_x = _First_Boi_Vic_Check_Obj_Intersect select 0;
 			_First_Boi_Vic_pos_y = _First_Boi_Vic_Check_Obj_Intersect select 1;
 			_First_Boi_Vic_pos_z = _First_Boi_Vic_Check_Obj_Intersect select 2;
-			_First_Boi_Vic_pos_z = _First_Boi_Vic_pos_z - 8.5;
+			_First_Boi_Vic_pos_z = _First_Boi_Vic_pos_z - 6.5;
 
 			_Speed = 65;		
 
