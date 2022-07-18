@@ -18,6 +18,7 @@ class NJP_Client
 		class UI_Color_Swap {};
 		class Update_Timer {};
 		class GUI_Edit {};
+		class Reset_Player {};
 		class Add_To_Places_Live_Array {};
 		class Delete_From_Places_Live_Array {};
 

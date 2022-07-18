@@ -15,19 +15,23 @@ publicVariable "RACE_PHASE";
 _color = "#45f442";//green
 
 //default
-_Time_left = 25;
+_Time_left = 20;
 
-_Voting_time_Left = Voting_Phase_Time + time;
+[_color, Voting_Phase_Time] remoteExec ["NJP_Client_fnc_Update_Timer", 0, true];
+
+uiSleep 1;
+
+_Voting_Time_left = Voting_Phase_Time + time;
 
 while {_Time_left > 0} do {
 
-	uiSleep 1;
+	uiSleep 0.25;
 
-	_Time_left = _Voting_time_Left - time;
+	_Time_left = _Voting_Time_left - time;
 
-	if (_Time_left < 21) then {_color = "#eef441";};//yellow
+	if (_Time_left < (Voting_Phase_Time * 0.35)) then {_color = "#eef441";};//yellow
 
-	if (_Time_left < 11) then {_color = "#ff0000";};//red
+	if (_Time_left < (Voting_Phase_Time * 0.15)) then {_color = "#ff0000";};//red
 
 	[_color, _Time_left] remoteExec ["NJP_Client_fnc_Update_Timer", 0, true];
 

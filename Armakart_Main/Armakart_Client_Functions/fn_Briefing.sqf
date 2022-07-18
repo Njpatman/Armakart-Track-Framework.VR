@@ -33,7 +33,7 @@ NEWTAB("Gameplay rules and concepts")
 	<br/><font color='#FF8000' size='20' face='PuristaBold'>In Race UI</font>
 	<br/> - The in race UI will give you an accurate display of your current lap and checkpoint.
 	<br/>
-	<br/> - Passengers in doubles teams WILL NOT be able to se their place, it tis up to the driver to relay that info.
+	<br/> - Passengers in doubles teams may not be able to se their place, if this is the case it is up to the driver to relay that info.
 	<br/>
 	<br/> - Note: The in race UIs' position display will be come inaccurate if you take a shortcut or unintended map skip, it will reset to proper positioning once you go through your next checkpoint or the finish line.
 	<br/>
@@ -55,13 +55,13 @@ NEWTAB("Hotkeys/Controls & Navigation")
 	<br/>
 	<br/><font size='19'> Use Powerup Alt:  R or Shift + R</font>
 	<br/>
+	<br/><font size='19'> Reset To Last Checkpoint:  Ctrl + Shift + R</font>
+	<br/>
+	<br/><font size='19'> Reset To Last Checkpoint But ACE: Ace Self-Interact >> Reset </font>
+	<br/>
 	<br/>Keep in mind that if you're pressing any other key when you press one of the above keys, nothing will happen.
 	<br/>
 	<br/>When you recieve a powerup, the keybindings you can use will be displayed.
-	<br/>
-	<br/>Everybody has a GPS/MicroDAGR. You can use it to see the track boundaries / other players.
-	<br/>
-	<br/><font color='#ff0000' size='20' face='PuristaBold'>In order to reset to your last checkpoint you must go to your Ace Self Interact Menu >> Reset.</font>
 	<br/>
 ENDTAB;
 

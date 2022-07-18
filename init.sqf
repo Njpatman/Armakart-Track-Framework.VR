@@ -10,15 +10,21 @@
 
 		Sub_CP_Size_Array = [20, 20, 0, true, 25]; // Please reference https://community.bistudio.com/wiki/setTriggerArea to make sure you edit the right variables.
 
-	//Checkpoint Manual Trigger Placement Array\\
+	//Checkpoint Manual Trigger Placement Arrays\\
 
-		Manual_Checkpoint_Array = []; // String of Checkpoint name IE: 'CP_7'
+		Manual_Checkpoint_Array = []; // Insert string of Checkpoint name, should look something like: ['CP_4', 'CP_7', 'CP_12'];
 
-		Manual_Sub_Checkpoint_Array = []; // String of Sub Checkpoint name IE: 'Sub_CP_9'
+		Manual_Sub_Checkpoint_Array = []; // Insert string of Sub Checkpoint name, should look something like: ['Sub_CP_9', 'Sub_CP_13', 'Sub_CP_24'];
+
+	//Reset Variables\\
+
+		Reset_Diameter = 10; // Diameter around the Checkpoint Markers players reset to; Please set to track width.
+
+		Reset_Height = 2; // Height above the Checkpoint Markers players will reset to.
 
 	//Intro Cam Controls\\
 
-		Radius_cam = 125; // Circle radius (distance to the checkpoints).
+		Radius_cam = 125; // Circle radius.
 
 		Angle_cam = random 360; // Starting angle (compass direction).
 
@@ -30,7 +36,7 @@
 
 		Kart_Classname = "C_Quadbike_01_F";
 
-	// NOTE: Global Variables such as Laps_number, Customization_Phase_Time, Voting_Phase_Enabled, and Voting_Phase_Time can be found in Armakart_Main/Params.hpp, Feel free to edit the default values to what best suits your track.
+	// NOTE: Global Variables such as Laps_number, Customization_Phase_Time, Voting_Phase_Enabled, and Voting_Phase_Time can be found in Armakart_Main/Armakart_Params.hpp, Feel free to edit the default values to what best suits your track.
 
 /*
 \\-------------------------------------------------------------//

@@ -4,6 +4,8 @@
 * 
 */
 
+#include "\a3\ui_f\hpp\defineDIKCodes.inc"
+
 // Exit if spectator
 if (hasInterface && (typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) exitWith {  // Check if player, even a host
 
@@ -183,73 +185,27 @@ playsound"count";
 //1
 ["<t color='#57de18' size='3'>1</t>",-1,-1,0.165,0,0,789] call BIS_fnc_dynamicText;
 
-systemChat "|Armakart System| : Begin the race!";
-
 //Sets players fuel to full
 [vehicle player, 1] remoteexec ['setfuel', vehicle player, false];
+
+systemChat "|Armakart System| : Race has begun. Player Reset will be available in 5 seconds!";
 
 //GO!
 ["<t color='#db9f07' size='4'>GO!</t>",-1,-1,0.165,0,0,789] call BIS_fnc_dynamicText;
 
-//Creates the Ace Self Interact to reset to last checkpoint
-_Reset_Checkpoint = ["Reset_Checkpoint","<t color='#731717'>RESET</t>","\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\repair_ca.paa",
-{
-	[] Spawn {
+if !(hasInterface) exitWith {};
 
-		//Creates vehicle for player, if the idiot got out
-		if (isNull objectParent player) then
-		{
-			_veh = createVehicle [Kart_Classname, getPosASL player, [], 0, "NONE"];
+uiSleep 4.5;
 
-			uiSleep 0.15;
+if (!isNil "ace_interact_menu_fnc_createAction") then {
 
-			player moveInDriver _veh;
-			player allowDamage false;
-			vehicle player allowDamage false;
-		};
+	//Creates the Ace Self Interact to reset to last checkpoint
+	_Reset_Checkpoint = ["Reset_Checkpoint","<t color='#731717'>RESET</t>","\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\repair_ca.paa", { [] spawn NJP_Client_Fnc_Reset_Player; },{true}] call ace_interact_menu_fnc_createAction;
 
-		//Gets players checkpoint
-		CP_str = 'CP_obj = CP_' + (str Current_Checkpoint);
+	[player, 1, ["ACE_SelfActions"], _Reset_Checkpoint] call ace_interact_menu_fnc_addActionToObject;
 
-		[] call compile CP_str;
+	systemChat "|Armakart System| : Player Reset Available! Use [ CTRL + SHIFT +  R ] OR [ ACE SELF-INTERACT >> RESET ] To Reset ";
+	
+} else { systemChat "|Armakart System| : Player Reset Available! Use [ CTRL + SHIFT +  R ] To Reset "; };
 
-		vehicle player setDamage 0;
-
-		//have to remoteExec for doubles
-		[vehicle player, (getDir CP_obj)] remoteExec ['setDir', vehicle player, true];
-		[vehicle player, (surfaceNormal position vehicle player)] remoteExec ['setVectorUp', vehicle player, true];
-
-		//Teleports players in a randomly select position in a circle around the CP, as well as faces them the direction the CP is facing
-		vehicle player setPosASL ((getPosASL CP_obj) vectorAdd ([[5,0,1], random 360] call BIS_fnc_rotateVector2D));
-
-		uiNamespace getVariable "NJP_Block_Keys";
-		uiNamespace getVariable "NJP_Block_Keys_EH";
-
-		if (uiNamespace getVariable "NJP_Block_Keys" isEqualTo 1) then {
-
-			uiNamespace setVariable ["NJP_Block_Keys", 0];
-
-			systemChat "|Armakart System| : Movement input will be re-enabled in a couple seconds from reset!";
-
-			uiSleep 1.5;
-					
-			([] call BIS_fnc_displayMission) displayRemoveEventHandler ["KeyDown", (uiNamespace getVariable "NJP_Block_Keys_EH")];
-			uiNamespace setVariable ["NJP_Block_Keys_EH", nil];
-
-			if (!isNil "Lightning_Particle_Effect") then {
-
-				deleteVehicle Lightning_Particle_Effect;
-							
-			};
-
-			[vehicle player,1] remoteexec ['setfuel', vehicle player, true];
-
-			systemChat "|Armakart System| : Movement input re-enabled from reset!";
-
-		};
-
-	};
-
-},{true}] call ace_interact_menu_fnc_createAction;
-
-[player, 1, ["ACE_SelfActions"], _Reset_Checkpoint] call ace_interact_menu_fnc_addActionToObject;
+["Armakart", "Reset_Player", "Reset Player", { [] spawn NJP_Client_Fnc_Reset_Player; }, {""}, [DIK_R, [true, true, false]], false, 0, false] call CBA_fnc_addKeybind;

@@ -42,6 +42,21 @@ switch (_GUI_Edit) do {
 
     };
 
+	case "Edit_Customization_Phase": { 
+
+		if ((typeOf player isEqualTo "potato_spectate_spectator" || typeOf player isEqualTo "ace_spectator_virtual" || player in ([] call ace_spectator_fnc_players))) then {
+
+			disableSerialization;
+
+			#define _Pre_Race_UI_Bottom uiNamespace getVariable ["Pre_Race_UI_Bottom", controlNull]
+			_Pre_Race_UI_Bottom ctrlSetStructuredText parseText "<br/> <t align = 'center' size='1'> </t>";
+
+			closeDialog 1234;
+
+		};
+
+    };
+
     case "Edit_Initial_Loading_Screen": {
 
 		_Loading_Screen_Bottom_Main_Display ctrlSetStructuredText parseText format [ "<t color='#a7adba' font='PuristaSemibold' align = 'right' size='1.85'>Armakart %1 is Initializing, Please Stand By...</t>", Track_Title];
