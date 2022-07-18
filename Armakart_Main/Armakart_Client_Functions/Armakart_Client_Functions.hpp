@@ -66,6 +66,7 @@ class NJP_Client_Powerup_Additional
 		class Banana_3 {};
 		class Boost_2 {};
 		class Boost_3 {};
+		class Tell_Victim_Attacker {};
 
 	};
 
@@ -80,6 +81,8 @@ class NJP_Client_Powerup_Effect
 		file = "Armakart_Main\Armakart_Client_Functions\Armakart_Client_Powerup_Functions\Armakart_Client_Functions_Powerup_Effects";
 		class Banana_Effect {};
 		class FusRoDah_Effect {};
+		class Lightning_Effect {};
+		class Change_Mass_Effect {};
 
 	};
 

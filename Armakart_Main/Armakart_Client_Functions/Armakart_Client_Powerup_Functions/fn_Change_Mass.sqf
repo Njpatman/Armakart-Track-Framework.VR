@@ -15,7 +15,7 @@ Initial_hint = true;
 		hintsilent parseText "<t>Change Mass Status:  </t><t color='#eef441'>Changing Mass...</t>";
 		////////////////////////////////////////////////////////////////////////////////////////////////
 
-			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 25];
+			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 35];
 
 			if (_Search_Array isEqualTo []) exitWith {
 				
@@ -43,21 +43,9 @@ Initial_hint = true;
 			_driver_array = _Kart_array select 0;
 			_driver = _driver_array select 0;
 
-			[[],{
-				
-				_OG_mass = getMass vehicle player;
+			_Attacker_Name = name player;
 
-				vehicle player setMass 10000;
-
-				systemChat "|Armakart Powerups| : Your mass has been changed for 6.5 seconds!";
-
-				uiSleep 6.5;
-
-				vehicle player setMass _OG_mass;
-
-				systemChat "|Armakart Powerups| : Your mass has been reset!";
-				
-			}] remoteExec ["Spawn", _driver];
+			[_Attacker_Name] remoteExec ["NJP_Client_Powerup_Effect_Fnc_Change_Mass_Effect", _driver];
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -80,7 +68,7 @@ Initial_hint = true;
 		hintsilent parseText "<t>Change Mass Status:  </t><t color='#eef441'>Changing Mass...</t>";
 		////////////////////////////////////////////////////////////////////////////////////////////////
 
-			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 25];
+			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 35];
 
 			if (_Search_Array isEqualTo []) exitWith {
 				
@@ -108,21 +96,9 @@ Initial_hint = true;
 			_driver_array = _Kart_array select 0;
 			_driver = _driver_array select 0;
 
-			[[],{
-				
-				_OG_mass = getMass vehicle player;
+			_Attacker_Name = name player;
 
-				vehicle player setMass 10000;
-
-				systemChat "|Armakart Powerups| : Your mass has been changed for 6.5 seconds!";
-
-				uiSleep 6.5;
-
-				vehicle player setMass _OG_mass;
-
-				systemChat "|Armakart Powerups| : Your mass has been reset!";
-				
-			}] remoteExec ["Spawn", _driver];
+			[_Attacker_Name] remoteExec ["NJP_Client_Powerup_Effect_Fnc_Change_Mass_Effect", _driver];
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
 

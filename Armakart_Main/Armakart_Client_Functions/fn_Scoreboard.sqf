@@ -67,18 +67,15 @@ Scoreboard_Active = true;
 createDialog "Scoreboard_UI";
 
 //Default UI color incase player jip'd
-_UI_Color = [0.133,0.349,0.522,0.65];
+_UI_Color_Backup = selectRandom [Light_Blue, Light_Green, Light_Red];
 
 //Get the UI color that was used on the Customization UI and applies it
 _UI_Color = profileNamespace getVariable "UI_Color";
-_Scoreboard_UI ctrlSetBackgroundColor _UI_Color;
+
+if (!isNil "_UI_Color") then { _Scoreboard_UI ctrlSetBackgroundColor _UI_Color; } else { _Scoreboard_UI ctrlSetBackgroundColor _UI_Color_Backup; };
 
 //Get's the places array and applies them in order to the Places Screen
-{
-
-	lbAdd [1555,_x];
-
-} forEach Places;
+{ lbAdd [1555,_x]; } forEach Places;
 
 playMusic "";
 
@@ -95,9 +92,9 @@ playMusic "";
 		waitUntil
 		{
 
-		uiSleep 1;
+			uiSleep 5 ;
 
-		not music_isPlaying
+			not music_isPlaying
 
 		};
 

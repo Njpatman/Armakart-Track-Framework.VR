@@ -15,7 +15,7 @@ Initial_hint = true;
 		hintsilent parseText "<t>Lightning Status:  </t><t color='#eef441'>Zapping...</t>";
 		////////////////////////////////////////////////////////////////////////////////////////////////
 
-			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 25];
+			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 35];
 
 			if (_Search_Array isEqualTo []) exitWith {
 				
@@ -29,66 +29,18 @@ Initial_hint = true;
 
 			_Kart = _Search_Array select 0;
 
-			if (!(_kart isEqualTo vehicle player) && !isNull _kart) exitWith 
+			if (!(_Kart isEqualTo vehicle player) && !isNull _Kart) exitWith 
 			{
+
+				_Attacker_Name = name player;
 				
 				_group = createGroup CIVILIAN;
 
 				_Zap = _group createUnit ["ModuleLightning_F",getPosASL _Kart, [], 0, "CAN_COLLIDE"];
 
-				[_Kart,0] remoteexec ['setfuel', _Kart];
-
-				uiSleep 0.2;
-
 				deleteGroup _group;
 
-				[[],{
-
-					uiNamespace getVariable "NJP_Block_Keys";
-					uiNamespace getVariable "NJP_Block_Keys_EH";
-
-					if (uiNamespace getVariable "NJP_Block_Keys" isEqualTo 0) then {
-					
-						_NJP_Block_Keys_Fnc = ([] call BIS_fnc_displayMission) displayAddEventHandler ["KeyDown","_this call NJP_Client_Fnc_Block_Key_Input"];
-						uiNamespace setVariable ["NJP_Block_Keys_EH", _NJP_Block_Keys_Fnc];
-						uiNamespace setVariable ["NJP_Block_Keys", 1];
-
-						Lightning_Particle_Effect = "#particlesource" createVehicle (getPosASL vehicle player);
-
-						[Lightning_Particle_Effect, [0, [0, 0, 0]]] remoteExec ["setParticleCircle",0,true];
-						[Lightning_Particle_Effect, [1, [0.05, 0.05, 0.1], [5, 5, 3], 0, 0.0025, [0, 0, 0, 0], 0, 0]] remoteExec ["setParticleRandom",0,true];
-						[Lightning_Particle_Effect, [["\A3\data_f\proxies\muzzle_flash\muzzle_flash_silencer.p3d", 1, 0, 1], "", "SpaceObject", 1, 1.5, [0, 0, 0], [0, 0, 0], 0, 20, 7.9, 0, [1, 1, 0.5], [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 0.5]], [0.08], 1, 0, "", "", vehicle player]] remoteExec ["setParticleParams",0,true];
-						[Lightning_Particle_Effect, 0.005] remoteExec ["setDropInterval",0,true];
-
-						systemChat "|Armakart Powerups| : Movement input disabled from lightning!";
-
-					};
-
-					uiSleep 5;
-
-					[vehicle player,1] remoteexec ['setfuel', vehicle player];
-
-					uiNamespace getVariable "NJP_Block_Keys";
-					uiNamespace getVariable "NJP_Block_Keys_EH";
-
-					if (uiNamespace getVariable "NJP_Block_Keys" isEqualTo 1) then {
-					
-						([] call BIS_fnc_displayMission) displayRemoveEventHandler ["KeyDown", (uiNamespace getVariable "NJP_Block_Keys_EH")];
-						uiNamespace setVariable ["NJP_Block_Keys_EH", nil];
-						uiNamespace setVariable ["NJP_Block_Keys", 0];
-
-						if (!isNil "Lightning_Particle_Effect") then {
-
-							deleteVehicle Lightning_Particle_Effect;
-							
-						};
-
-						systemChat "|Armakart Powerups| : Movement input re-enabled!";
-
-					};
-					
-				
-				}] remoteExec ["Spawn", _kart];
+				[_Attacker_Name] remoteExec ["NJP_Client_Powerup_Effect_Fnc_Lightning_Effect", _kart];
 
 				deleteVehicle _Zap;
 				hint parseText "<t>Lightning Status:  </t><t color='#ff0000'>Zap Complete</t>";
@@ -119,7 +71,7 @@ Initial_hint = true;
 		hintsilent parseText "<t>Lightning Status:  </t><t color='#eef441'>Zapping...</t>";
 		////////////////////////////////////////////////////////////////////////////////////////////////
 
-			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 25];
+			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 35];
 
 			if (_Search_Array isEqualTo []) exitWith {
 				
@@ -133,66 +85,18 @@ Initial_hint = true;
 
 			_Kart = _Search_Array select 0;
 
-			if (!(_kart isEqualTo vehicle player) && !isNull _kart) exitWith 
+			if (!(_Kart isEqualTo vehicle player) && !isNull _Kart) exitWith 
 			{
+
+				_Attacker_Name = name player;
 				
 				_group = createGroup CIVILIAN;
 
 				_Zap = _group createUnit ["ModuleLightning_F",getPosASL _Kart, [], 0, "CAN_COLLIDE"];
 
-				[_Kart,0] remoteexec ['setfuel', _Kart];
-
-				uiSleep 0.2;
-
 				deleteGroup _group;
 
-				[[],{
-
-					uiNamespace getVariable "NJP_Block_Keys";
-					uiNamespace getVariable "NJP_Block_Keys_EH";
-
-					if (uiNamespace getVariable "NJP_Block_Keys" isEqualTo 0) then {
-					
-						_NJP_Block_Keys_Fnc = ([] call BIS_fnc_displayMission) displayAddEventHandler ["KeyDown","_this call NJP_Client_Fnc_Block_Key_Input"];
-						uiNamespace setVariable ["NJP_Block_Keys_EH", _NJP_Block_Keys_Fnc];
-						uiNamespace setVariable ["NJP_Block_Keys", 1];
-
-						Lightning_Particle_Effect = "#particlesource" createVehicle (getPosASL vehicle player);
-
-						[Lightning_Particle_Effect, [0, [0, 0, 0]]] remoteExec ["setParticleCircle",0,true];
-						[Lightning_Particle_Effect, [1, [0.05, 0.05, 0.1], [5, 5, 3], 0, 0.0025, [0, 0, 0, 0], 0, 0]] remoteExec ["setParticleRandom",0,true];
-						[Lightning_Particle_Effect, [["\A3\data_f\proxies\muzzle_flash\muzzle_flash_silencer.p3d", 1, 0, 1], "", "SpaceObject", 1, 1.5, [0, 0, 0], [0, 0, 0], 0, 20, 7.9, 0, [1, 1, 0.5], [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 0.5]], [0.08], 1, 0, "", "", vehicle player]] remoteExec ["setParticleParams",0,true];
-						[Lightning_Particle_Effect, 0.005] remoteExec ["setDropInterval",0,true];
-
-						systemChat "|Armakart Powerups| : Movement input disabled from lightning!";
-
-					};
-
-					uiSleep 5;
-
-					[vehicle player,1] remoteexec ['setfuel', vehicle player];
-
-					uiNamespace getVariable "NJP_Block_Keys";
-					uiNamespace getVariable "NJP_Block_Keys_EH";
-
-					if (uiNamespace getVariable "NJP_Block_Keys" isEqualTo 1) then {
-					
-						([] call BIS_fnc_displayMission) displayRemoveEventHandler ["KeyDown", (uiNamespace getVariable "NJP_Block_Keys_EH")];
-						uiNamespace setVariable ["NJP_Block_Keys_EH", nil];
-						uiNamespace setVariable ["NJP_Block_Keys", 0];
-
-						if (!isNil "Lightning_Particle_Effect") then {
-
-							deleteVehicle Lightning_Particle_Effect;
-							
-						};
-
-						systemChat "|Armakart Powerups| : Movement input re-enabled!";
-
-					};
-					
-				
-				}] remoteExec ["Spawn", _kart];
+				[_Attacker_Name] remoteExec ["NJP_Client_Powerup_Effect_Fnc_Lightning_Effect", _kart];
 
 				deleteVehicle _Zap;
 				hint parseText "<t>Lightning Status:  </t><t color='#ff0000'>Zap Complete</t>";

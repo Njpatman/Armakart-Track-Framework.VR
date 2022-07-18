@@ -17,6 +17,9 @@ Initial_hint = true;
 			Places_Live sort false;
 			_First_Boi_local_array_num = Places_Live findIf {(_x select 5) isEqualTo 1};
 			_First_Boi_local_array = Places_Live select _First_Boi_local_array_num;
+
+			if (isNil "_First_Boi_local_array") then { _First_Boi_local_array = Places_Live select 0; };
+
 			_First_Boi = _First_Boi_local_array select 4;
 			_First_Boi_Vic = vehicle _First_Boi;
 
@@ -114,6 +117,9 @@ Initial_hint = true;
 			Places_Live sort false;
 			_First_Boi_local_array_num = Places_Live findIf {(_x select 5) isEqualTo 1};
 			_First_Boi_local_array = Places_Live select _First_Boi_local_array_num;
+
+			if (isNil "_First_Boi_local_array") then { _First_Boi_local_array = Places_Live select 0; };
+
 			_First_Boi = _First_Boi_local_array select 4;
 			_First_Boi_Vic = vehicle _First_Boi;
 

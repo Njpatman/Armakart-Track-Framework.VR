@@ -14,7 +14,7 @@ Initial_hint = true;
 		hintsilent parseText "<t>Involuntary Boost Status:  </t><t color='#eef441'>Forcing Boost...</t>";
 		////////////////////////////////////////////////////////////////////////////////////////////////
 
-			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 25];
+			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 35];
 
 			if (_Search_Array isEqualTo []) exitWith {
 				
@@ -30,18 +30,25 @@ Initial_hint = true;
 
 			if (!(_kart isEqualTo vehicle player) && !isNull _kart) exitwith
 			{
+				
+				_Attacker_Name = name player;
+
+				[_Attacker_Name, "Involuntary Boost"] remoteExec ["NJP_Client_Powerup_Additional_fnc_Tell_Victim_Attacker", _Kart];
+
 				_vel = velocity _Kart;
 				_dir = random 360;
-				_speed = 38;
+				_speed = 48;
 				["turbo"] remoteexec ["playsound", _Kart];
 				[_Kart, [
 					(_vel select 0) + (sin _dir * _speed), 
 					(_vel select 1) + (cos _dir * _speed), 
 					(_vel select 2)
 				]] remoteexec ["setVelocity", _Kart];
-			hint parseText "<t>Involuntary Boost Status:  </t><t color='#ff0000'>Involuntary Boost Complete</t>";
-			No_item = true;
-			"Crosshair_Layer" cutFadeOut 0.001;
+
+				hint parseText "<t>Involuntary Boost Status:  </t><t color='#ff0000'>Involuntary Boost Complete</t>";
+				No_item = true;
+				"Crosshair_Layer" cutFadeOut 0.001;
+
 			};
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
@@ -61,7 +68,7 @@ Initial_hint = true;
 		hintsilent parseText "<t>Involuntary Boost Status:  </t><t color='#eef441'>Forcing Boost...</t>";
 		////////////////////////////////////////////////////////////////////////////////////////////////
 
-			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 25];
+			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 35];
 
 			if (_Search_Array isEqualTo []) exitWith {
 				
@@ -77,18 +84,25 @@ Initial_hint = true;
 
 			if (!(_kart isEqualTo vehicle player) && !isNull _kart) exitwith
 			{
+				
+				_Attacker_Name = name player;
+
+				[_Attacker_Name, "Involuntary Boost"] remoteExec ["NJP_Client_Powerup_Additional_fnc_Tell_Victim_Attacker", _Kart];
+
 				_vel = velocity _Kart;
 				_dir = random 360;
-				_speed = 38;
+				_speed = 48;
 				["turbo"] remoteexec ["playsound", _Kart];
 				[_Kart, [
 					(_vel select 0) + (sin _dir * _speed), 
 					(_vel select 1) + (cos _dir * _speed), 
 					(_vel select 2)
 				]] remoteexec ["setVelocity", _Kart];
-			hint parseText "<t>Involuntary Boost Status:  </t><t color='#ff0000'>Involuntary Boost Complete</t>";
-			No_item = true;
-			"Crosshair_Layer" cutFadeOut 0.001;
+
+				hint parseText "<t>Involuntary Boost Status:  </t><t color='#ff0000'>Involuntary Boost Complete</t>";
+				No_item = true;
+				"Crosshair_Layer" cutFadeOut 0.001;
+
 			};
 
 		////////////////////////////////////////////////////////////////////////////////////////////////
