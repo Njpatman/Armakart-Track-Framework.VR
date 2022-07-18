@@ -17,6 +17,14 @@ Initial_hint = true;
 
 			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 35];
 
+			if (_Search_Array isEqualTo []) then {
+
+				_Pos_AGl = screenToWorld [0.5,0.5];
+
+				_Search_Array = nearestObjects [_Pos_AGl, ["Car", "Truck"], 35];
+
+			};
+
 			if (_Search_Array isEqualTo []) exitWith {
 				
 				hint parseText "<t>Change Mass Status:  </t><t color='#ff0000'>Change Mass Stopped, No Kart Was Found In Range Of Where You Targeted</t>";
@@ -69,6 +77,14 @@ Initial_hint = true;
 		////////////////////////////////////////////////////////////////////////////////////////////////
 
 			_Search_Array = nearestObjects [getPos cursorTarget, ["Car", "Truck"], 35];
+
+			if (_Search_Array isEqualTo []) then {
+
+				_Pos_AGl = screenToWorld [0.5,0.5];
+
+				_Search_Array = nearestObjects [_Pos_AGl, ["Car", "Truck"], 35];
+
+			};
 
 			if (_Search_Array isEqualTo []) exitWith {
 				
