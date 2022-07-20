@@ -25,11 +25,11 @@ if (!isNil "potato_safeStart_fnc_toggleSafeStart") then { [false] call potato_sa
 
 ["Initial_Loading_Layer", ["Loading_Screen", "PLAIN"]] remoteExec ["cutRsc", 0, false];
 
-["Edit_Initial_Loading_Screen", Loaded_CP_NUM, Loaded_SUB_CP_NUM, Loaded_PWR_BLK_NUM] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
+["Edit_Initial_Loading_Screen", Loaded_CP_NUM, Loaded_SUB_CP_NUM, Loaded_PWR_BLK_NUM] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, false];
 
 remoteExec ["NJP_Client_fnc_Pre_Race_Phase", 0, false];
 
-waitUntil {Players_Preloaded > (0.25 * (count allPlayers))};
+waitUntil {Players_Preloaded > (0.5 * (count allPlayers))};
 
 //Initializes Checkpoints
 _CP_Init = [] spawn NJP_Server_fnc_Checkpoints;
@@ -43,13 +43,13 @@ _Powerup_Block_Init = [] spawn NJP_Server_fnc_Powerup_Blocks;
 While {!scriptDone _Powerup_Block_Init || !scriptDone _Sub_CP_Init || !scriptDone _CP_Init} do {
 
 
-	["Edit_Initial_Loading_Screen", Loaded_CP_NUM, Loaded_SUB_CP_NUM, Loaded_PWR_BLK_NUM] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
+	["Edit_Initial_Loading_Screen", Loaded_CP_NUM, Loaded_SUB_CP_NUM, Loaded_PWR_BLK_NUM] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, false];
 
 	uiSleep 0.225;
 
 };
 
-["Edit_Initial_Loading_Screen", Loaded_CP_NUM, Loaded_SUB_CP_NUM, Loaded_PWR_BLK_NUM] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, true];
+["Edit_Initial_Loading_Screen", Loaded_CP_NUM, Loaded_SUB_CP_NUM, Loaded_PWR_BLK_NUM] remoteExec ["NJP_Client_Fnc_GUI_Edit", 0, false];
 
 //- Handles the Customization Phase ACE Self Interact, and camera -\\
 
