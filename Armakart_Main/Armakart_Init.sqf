@@ -102,7 +102,7 @@ if (isServer) then
 	}];
 
 	//Pre-Race phase START!!
-	[] spawn NJP_Server_fnc_Race_Init_Master;
+	onPreloadFinished {[] spawn NJP_Server_fnc_Race_Init_Master; onPreloadFinished ""};
 
 	"|Armakart System| : Server initialization completed!" remoteExec ["systemChat", 0, true];
 
