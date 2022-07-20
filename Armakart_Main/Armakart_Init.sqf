@@ -54,8 +54,22 @@ CP_NUM = count allMissionObjects "VR_3DSelector_01_complete_F";
 SUB_CP_NUM = count allMissionObjects "Sign_Arrow_Large_Cyan_F";
 PWR_BLK_NUM = count allMissionObjects "Land_VR_CoverObject_01_kneelHigh_F";
 
-//- Server Init -\\
+onPreloadFinished { [[],{ Players_Preloaded = Players_Preloaded + 1 }] remoteExec ["Spawn", 2, false]; };
 
+addMissionEventHandler ["PlayerDisconnected", 
+{
+
+	params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
+
+	if (!isNil "NJP_Client_Fnc_Delete_From_Places_Live_Array" && !isNil "Loc_Array") then {
+
+		[Loc_Array] remoteExec ["NJP_Client_Fnc_Delete_From_Places_Live_Array", 0, true];
+							
+	};
+
+}];
+
+//- Server Init -\\
 if (isServer) then 
 {
 
@@ -77,6 +91,8 @@ if (isServer) then
 	Loaded_SUB_CP_NUM = 0;
 	Loaded_PWR_BLK_NUM = 0;
 
+	Players_Preloaded = 0;
+
 	NJP_Server_fnc_Weather_Clear_Vote = { Weather_Clear = Weather_Clear + 1; };
 	NJP_Server_fnc_Weather_Cloudy_Vote = { Weather_Cloudy = Weather_Cloudy + 1; };
 	NJP_Server_fnc_Weather_Foggy_Vote = { Weather_Foggy = Weather_Foggy + 1; };
@@ -88,21 +104,8 @@ if (isServer) then
 	NJP_Server_fnc_Time_Night_Vote = { Time_Night = Time_Night + 1; };
 	NJP_Server_fnc_Time_Night_Full_Moon_Vote = { Time_Night_Full_Moon = Time_Night_Full_Moon + 1; };
 
-	addMissionEventHandler ["PlayerDisconnected", 
-	{
-
-		params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
-
-		if (!isNil "NJP_Client_Fnc_Delete_From_Places_Live_Array" && !isNil "Loc_Array" && !(Loc_Array isEqualTo [0, 0, 0, 0])) then {
-
-			[Loc_Array] remoteExec ["NJP_Client_Fnc_Delete_From_Places_Live_Array", 0, true];
-								
-		};
-
-	}];
-
 	//Pre-Race phase START!!
-	onPreloadFinished {[] spawn NJP_Server_fnc_Race_Init_Master; onPreloadFinished ""};
+	[] spawn NJP_Server_fnc_Race_Init_Master;
 
 	"|Armakart System| : Server initialization completed!" remoteExec ["systemChat", 0, true];
 
