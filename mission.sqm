@@ -45,7 +45,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=9;
+		items=8;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -96,12 +96,6 @@ class AddonsMetaData
 			url="https://www.arma3.com";
 		};
 		class Item7
-		{
-			className="SE_SEVA_Oxygen_Tank";
-			name="SE_SEVA_Oxygen_Tank";
-			author="S.T.A.L.K.E.R. Equipment";
-		};
-		class Item8
 		{
 			className="ace_spectator";
 			name="ACE3 - Spectator";
