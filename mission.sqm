@@ -38,7 +38,6 @@ addons[]=
 	"A3_Structures_F_Exp_Infrastructure_Pavements",
 	"A3_Misc_F_Helpers",
 	"A3_Modules_F",
-	"SE_SEVA_Oxygen_Tank",
 	"ace_spectator"
 };
 class AddonsMetaData
