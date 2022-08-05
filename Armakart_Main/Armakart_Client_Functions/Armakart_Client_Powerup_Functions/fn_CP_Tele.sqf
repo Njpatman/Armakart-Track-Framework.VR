@@ -37,7 +37,7 @@ Initial_hint = true;
 			uiSleep 2.5;
 
 			//Teleports players in a randomly select position in a circle around the CP, as well as faces them the direction the CP is facing
-			vehicle player setPosASL ((getPosASL CP_Powerup_obj) vectorAdd ([[5,0,1], random 360] call BIS_fnc_rotateVector2D));
+			vehicle player setPosASL ((getPosASL CP_Powerup_obj) vectorAdd ([[(Reset_Diameter * 0.5),0,Reset_Height], random 360] call BIS_fnc_rotateVector2D));
 
 			//have to remoteExec for doubles
 			[vehicle player, (getDir CP_Powerup_obj)] remoteexec ['setDir', vehicle player];
@@ -88,7 +88,7 @@ Initial_hint = true;
 			uiSleep 2.5;
 
 			//Teleports players in a randomly select position in a circle around the CP, as well as faces them the direction the CP is facing
-			vehicle player setPosASL ((getPosASL CP_Powerup_obj) vectorAdd ([[5,0,1], random 360] call BIS_fnc_rotateVector2D));
+			vehicle player setPosASL ((getPosASL CP_Powerup_obj) vectorAdd ([[(Reset_Diameter * 0.5),0,Reset_Height], random 360] call BIS_fnc_rotateVector2D));
 
 			//have to remoteExec for doubles
 			[vehicle player, (getDir CP_Powerup_obj)] remoteexec ['setDir', vehicle player];
