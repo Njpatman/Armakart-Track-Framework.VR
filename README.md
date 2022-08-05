@@ -9,15 +9,11 @@ Please reference Armakart Track Framework Setup Guidelines.txt once you've downl
 
 Make sure to remove "-main" from the downloaded folder "Armakart-Track-Framework.VR-main" or else the editor will not open up the mission file.
 
-Updating to latest version of 2.5
+Updating to 2.5 from 2.4
 
 You no longer need checkpoint triggers in the editor, you can remove all checkpoint triggers (NOT THE FINISH LINE TRIGGER) unless you have some special sized checkpoints, in which case reference Armakart Track Framework Setup Guidelines line 76.
 
 In the Finish line trigger, replace whatever is in the "On Activation" box with: call NJP_Client_Fnc_Finish_Line;
-
-In each powerup blocks' atributes in the editor, scroll all the way down until you hit the Object Specific atribute, change Texture #0 and Texture #1 to:
-
-Armakart_Main\Armakart_UI_&_Textures\Powerup_Block.paa
 
 That should be everying, Happy karting!
 
